@@ -1,0 +1,44 @@
+name: Update articles data
+
+on:
+  schedule:
+    # Mondays at 14:30 UTC, half an hour after the barometer cron
+    - cron: "30 14 * * 1"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: articles
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: pip install -r scripts/articles/requirements.txt
+
+      - name: Build articles.json
+        run: python -m scripts.articles.build_articles
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "fyfa-bot"
+          git config user.email "bot@fyfa.ca"
+          git add data/articles.json
+          if git diff --cached --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+          git commit -m "data: refresh articles ($(date -u +%Y-%m-%d))"
+          git push

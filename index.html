@@ -231,11 +231,11 @@
     .stat-card .stat-value.pos { color: var(--green); }
     .stat-card .stat-value.neg { color: var(--red); }
     .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .article-card { background: var(--card); border-radius: 14px; overflow: hidden; border: 1px solid var(--rule); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    .article-card { background: var(--card); border-radius: 14px; overflow: hidden; border: 1px solid var(--rule); border-left: 3px solid var(--rule); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    .article-card.is-sa  { border-left-color: var(--accent); }
+    .article-card.is-fid { border-left-color: #6E8F6F; }
     .article-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
-    .article-thumb { aspect-ratio: 16/9; background: var(--bg-alt); display: flex; align-items: center; justify-content: center; color: var(--ink-muted); font-size: 0.8rem; }
-    .article-thumb img { width: 100%; height: 100%; object-fit: cover; }
-    .article-body { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+    .article-body { padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
     .article-meta { font-size: 0.78rem; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.06em; display: flex; gap: 10px; }
     .article-meta .ticker { background: var(--bg-alt); padding: 2px 8px; border-radius: 4px; color: var(--ink); font-weight: 600; letter-spacing: 0.02em; }
     .article-title { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 600; line-height: 1.3; color: var(--ink); }
@@ -261,6 +261,8 @@
     .subscores { display: grid; gap: 14px; }
     .subscore { background: var(--card); border-radius: 12px; padding: 16px 20px; border: 1px solid var(--rule); display: grid; grid-template-columns: 1.3fr 1fr 42px; gap: 16px; align-items: center; }
     .subscore .name { font-size: 0.95rem; font-weight: 500; }
+    .subscore .name .raw { font-family: 'Fraunces', serif; font-weight: 500; color: var(--ink-muted); margin-left: 6px; font-size: 0.92em; }
+    .subscore.is-stale { opacity: 0.55; }
     .subscore .weight { font-size: 0.8rem; color: var(--ink-muted); display: block; margin-top: 2px; }
     .bar { height: 10px; background: var(--bg-alt); border-radius: 999px; position: relative; overflow: hidden; }
     .bar-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--blue) 0%, var(--amber) 50%, var(--red) 100%); transform-origin: left; }
@@ -302,6 +304,13 @@
     .waitlist-wrap input:focus, .waitlist-wrap select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
     .waitlist-wrap button { width: 100%; padding: 14px; background: var(--ink); color: var(--bg); border: none; border-radius: 10px; font-size: 1rem; font-weight: 500; cursor: pointer; transition: background 0.15s ease; }
     .waitlist-wrap button:hover { background: var(--accent); }
+    .waitlist-wrap button[disabled] { opacity: 0.65; cursor: progress; }
+    .waitlist-status { margin-top: 12px; font-size: 0.92rem; min-height: 1.4em; color: var(--accent); }
+    .waitlist-status.ok { color: #4C8B5E; }
+    .waitlist-success { padding: 18px 0; text-align: center; }
+    .waitlist-success h3 { font-family: 'Fraunces', Georgia, serif; font-size: 1.4rem; font-weight: 600; margin-bottom: 8px; }
+    .waitlist-success p { color: var(--ink-muted); font-size: 0.98rem; }
+    .waitlist-honey { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
     .waitlist-alt { text-align: center; margin-top: 16px; font-size: 0.92rem; color: var(--ink-muted); }
 
     /* Footer */
@@ -596,43 +605,43 @@
             <text x="200" y="30" fill="#5E5A54" font-family="Inter" font-size="11" text-anchor="middle">50</text>
             <text x="360" y="225" fill="#5E5A54" font-family="Inter" font-size="11" text-anchor="middle">100</text>
           </svg>
-          <div class="gauge-label">62<small>Leaning greed · normal-hot band</small></div>
+          <div class="gauge-label"><span data-bm="score">62</span><small data-bm="band">Leaning greed · normal-hot band</small></div>
           <div class="gauge-legend"><span>Fear · 0–20</span><span>Normal · 20–80</span><span>Greed · 80–100</span></div>
         </div>
         <div class="subscores">
-          <div class="subscore">
-            <div><div class="name">Shiller PE</div><span class="weight">Weight 25% · 20y rolling z-score</span></div>
+          <div class="subscore" data-bm-key="shiller_pe">
+            <div><div class="name">Shiller PE<span class="raw" data-bm-raw></span></div><span class="weight">Weight 25% · 20y rolling z-score</span></div>
             <div class="bar"><div class="bar-fill" style="width: 72%;"></div></div>
             <div class="sub-val">72</div>
           </div>
-          <div class="subscore">
-            <div><div class="name">Buffett Indicator</div><span class="weight">Weight 25% · 20y rolling z-score</span></div>
+          <div class="subscore" data-bm-key="buffett">
+            <div><div class="name">Buffett Indicator<span class="raw" data-bm-raw></span></div><span class="weight">Weight 25% · 20y rolling z-score</span></div>
             <div class="bar"><div class="bar-fill" style="width: 68%;"></div></div>
             <div class="sub-val">68</div>
           </div>
-          <div class="subscore">
-            <div><div class="name">FINRA margin debt / GDP</div><span class="weight">Weight 20% · 10y rolling z-score</span></div>
+          <div class="subscore" data-bm-key="margin_debt">
+            <div><div class="name">FINRA margin debt / GDP<span class="raw" data-bm-raw></span></div><span class="weight">Weight 20% · 20y rolling z-score</span></div>
             <div class="bar"><div class="bar-fill" style="width: 58%;"></div></div>
             <div class="sub-val">58</div>
           </div>
-          <div class="subscore">
-            <div><div class="name">AAII retail cash (inverted)</div><span class="weight">Weight 20% · 10y rolling z-score</span></div>
+          <div class="subscore" data-bm-key="aaii_cash">
+            <div><div class="name">AAII retail cash (inverted)<span class="raw" data-bm-raw></span></div><span class="weight">Weight 20% · 10y rolling z-score</span></div>
             <div class="bar"><div class="bar-fill" style="width: 71%;"></div></div>
             <div class="sub-val">71</div>
           </div>
-          <div class="subscore">
-            <div><div class="name">CNN Fear &amp; Greed Index</div><span class="weight">Weight 10% · used directly</span></div>
+          <div class="subscore" data-bm-key="fear_greed">
+            <div><div class="name">CNN Fear &amp; Greed Index<span class="raw" data-bm-raw></span></div><span class="weight">Weight 10% · used directly</span></div>
             <div class="bar"><div class="bar-fill" style="width: 54%;"></div></div>
             <div class="sub-val">54</div>
           </div>
-          <div class="subscore" style="opacity:0.75;">
-            <div><div class="name">Google Trends "stock market" (X factor)</div><span class="weight">Active when ≥ 80 · currently 42</span></div>
+          <div class="subscore" data-bm-key="google_trends" style="opacity:0.75;">
+            <div><div class="name">Google Trends "stock market" (X factor)<span class="raw" data-bm-raw></span></div><span class="weight" data-bm-gt-weight>Active when ≥ 80 · currently 42</span></div>
             <div class="bar"><div class="bar-fill" style="width: 42%;"></div></div>
             <div class="sub-val">42</div>
           </div>
         </div>
       </div>
-      <p class="barometer-footnote">Last updated: pending deploy. Methodology: <a href="#">see notes</a>.</p>
+      <p class="barometer-footnote">Last updated: <span data-bm="updated">pending deploy</span>. Methodology: <a href="#">see notes</a>.</p>
     </div>
   </section>
 
@@ -665,7 +674,6 @@
       <div class="articles-grid" id="articles-grid">
         <!-- SA articles (placeholder returns, real links) -->
         <article class="article-card">
-          <div class="article-thumb">Hero image · SA</div>
           <div class="article-body">
             <div class="article-meta"><span class="ticker">WPLCF</span><span>Feb 27, 2025 · Seeking Alpha</span></div>
             <div class="article-title"><a href="https://seekingalpha.com/article/4762695-wise-moat-widens-as-global-network-supports-cost-leadership" target="_blank" rel="noopener">Wise: Moat Widens as Global Network Supports Cost Leadership</a></div>
@@ -677,7 +685,6 @@
           </div>
         </article>
         <article class="article-card">
-          <div class="article-thumb">Hero image · SA</div>
           <div class="article-body">
             <div class="article-meta"><span class="ticker">PROSY</span><span>Apr 25, 2025 · Seeking Alpha</span></div>
             <div class="article-title"><a href="https://seekingalpha.com/article/4778047-prosus-best-proxy-to-internet-giant-tencent" target="_blank" rel="noopener">Prosus: Best Proxy to Internet Giant Tencent</a></div>
@@ -689,7 +696,6 @@
           </div>
         </article>
         <article class="article-card">
-          <div class="article-thumb">Hero image · SA</div>
           <div class="article-body">
             <div class="article-meta"><span class="ticker">JOYY</span><span>May 23, 2025 · Seeking Alpha</span></div>
             <div class="article-title"><a href="https://seekingalpha.com/article/4789546-joyy-deep-value-and-amazing-shareholder-returns" target="_blank" rel="noopener">JOYY: Deep Value and Amazing Shareholder Returns</a></div>
@@ -701,7 +707,6 @@
           </div>
         </article>
         <article class="article-card">
-          <div class="article-thumb">Hero image · SA</div>
           <div class="article-body">
             <div class="article-meta"><span class="ticker">CNI</span><span>Jul 24, 2025 · Seeking Alpha</span></div>
             <div class="article-title"><a href="https://seekingalpha.com/article/4803772-canadian-national-railway-time-to-board-this-train-with-a-cheap-ticket" target="_blank" rel="noopener">Canadian National Railway: Time to Board This Train With a Cheap Ticket</a></div>
@@ -713,7 +718,6 @@
           </div>
         </article>
         <article class="article-card">
-          <div class="article-thumb">Hero image · SA</div>
           <div class="article-body">
             <div class="article-meta"><span class="ticker">CROX</span><span>Aug 21, 2025 · Seeking Alpha</span></div>
             <div class="article-title"><a href="https://seekingalpha.com/article/4815494-crocs-still-an-underrated-cash-cow" target="_blank" rel="noopener">Crocs: Still an Underrated Cash Cow</a></div>
@@ -725,7 +729,6 @@
           </div>
         </article>
         <article class="article-card">
-          <div class="article-thumb">Hero image · SA</div>
           <div class="article-body">
             <div class="article-meta"><span class="ticker">SU</span><span>Dec 3, 2025 · Seeking Alpha</span></div>
             <div class="article-title"><a href="https://seekingalpha.com/article/4849637-suncor-energy-a-value-machine-with-rising-efficiency" target="_blank" rel="noopener">Suncor Energy: A Value Machine With Rising Efficiency</a></div>
@@ -738,7 +741,6 @@
         </article>
         <!-- Fidelity articles -->
         <article class="article-card">
-          <div class="article-thumb">Hero image · Fidelity</div>
           <div class="article-body">
             <div class="article-meta"><span class="ticker">Japan Reflation</span><span>Jan 25, 2024 · Fidelity</span></div>
             <div class="article-title"><a href="https://www.fidelity.com.sg/articles/analysis-and-research/2024-01-25-optimism-balloons-from-japans-reflating-economy-1706179610989" target="_blank" rel="noopener">Optimism balloons from Japan's reflating economy</a></div>
@@ -746,7 +748,6 @@
           </div>
         </article>
         <article class="article-card">
-          <div class="article-thumb">Hero image · Fidelity</div>
           <div class="article-body">
             <div class="article-meta"><span class="ticker">India Solar</span><span>Dec 21, 2023 · Fidelity</span></div>
             <div class="article-title"><a href="https://www.fidelity.com.sg/articles/analysis-and-research/2023-12-21-indias-hopes-for-solar-dominance-dimmed-but-not-extinguished-1704188241829" target="_blank" rel="noopener">India's hopes for solar dominance dimmed but not extinguished</a></div>
@@ -754,7 +755,6 @@
           </div>
         </article>
         <article class="article-card">
-          <div class="article-thumb">Hero image · Fidelity</div>
           <div class="article-body">
             <div class="article-meta"><span class="ticker">Korea Discount</span><span>May 16, 2024 · Fidelity</span></div>
             <div class="article-title"><a href="https://www.fidelity.com.sg/articles/analysis-and-research/2024-05-16-embracing-the-korea-discount-1715922902572" target="_blank" rel="noopener">Embracing the Korea discount</a></div>
@@ -854,11 +854,11 @@
       <div class="eyebrow">Join the waitlist</div>
       <h2 style="max-width: 22ch; margin: 0 auto;">Be first to hear when the course opens in May 2026.</h2>
       <div class="waitlist-wrap" style="text-align: left;">
-        <form onsubmit="event.preventDefault(); alert('Form not wired up yet — placeholder. Will be hooked to Formspree/email on deploy.');">
+        <form id="waitlist-form" novalidate>
           <label for="wl-name">Name</label>
-          <input type="text" id="wl-name" name="name" required placeholder="Your name" />
+          <input type="text" id="wl-name" name="name" required placeholder="Your name" autocomplete="name" />
           <label for="wl-email">Email</label>
-          <input type="email" id="wl-email" name="email" required placeholder="you@example.com" />
+          <input type="email" id="wl-email" name="email" required placeholder="you@example.com" autocomplete="email" />
           <label for="wl-level">Interested in</label>
           <select id="wl-level" name="level">
             <option>Still deciding</option>
@@ -866,7 +866,9 @@
             <option>Level B — Going deeper</option>
             <option>Both levels</option>
           </select>
+          <input class="waitlist-honey" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <button type="submit">Join the waitlist</button>
+          <div class="waitlist-status" data-wl-status role="status" aria-live="polite"></div>
         </form>
         <p class="waitlist-alt">Or just email <a href="mailto:askme@fyfa.ca">askme@fyfa.ca</a>.</p>
       </div>
@@ -895,6 +897,286 @@
       if (location.hash) {
         window.addEventListener('load', function () { setTimeout(scrollToHash, 60); });
       }
+    })();
+  </script>
+
+  <script>
+    // Hydrate the market sentiment barometer from data/barometer.json.
+    // Falls back silently to the static placeholder values if the fetch fails.
+    (function () {
+      var BAND_LABELS = {
+        fear: 'Fear · cold conditions',
+        leaning_fear: 'Leaning fear · cool',
+        normal: 'Normal · in-range',
+        leaning_greed: 'Leaning greed · normal-hot band',
+        greed: 'Greed · hot conditions'
+      };
+      // Arc circumference for the half-circle of radius 160: pi * r.
+      var ARC_LEN = Math.PI * 160;
+
+      function fmtRaw(ind) {
+        var v = ind.value;
+        if (v == null) return '';
+        if (ind.value_unit === 'fraction') return ' · ' + (v * 100).toFixed(1) + '%';
+        if (ind.value_unit === 'index_0_100') return ' · ' + Math.round(v);
+        // ratio / default — round sensibly by magnitude
+        if (Math.abs(v) >= 100) return ' · ' + v.toFixed(0);
+        if (Math.abs(v) >= 10)  return ' · ' + v.toFixed(1);
+        return ' · ' + v.toFixed(2);
+      }
+
+      function fmtAsof(s) {
+        if (!s) return '—';
+        var d = new Date(s + 'T00:00:00Z');
+        if (isNaN(d.getTime())) return s;
+        return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+      }
+
+      function applyBarometer(data) {
+        if (!data || typeof data.score !== 'number') return;
+
+        // Top score + band
+        var scoreEl = document.querySelector('[data-bm="score"]');
+        var bandEl = document.querySelector('[data-bm="band"]');
+        if (scoreEl) scoreEl.textContent = data.score;
+        if (bandEl)  bandEl.textContent  = BAND_LABELS[data.band] || data.band;
+
+        // Needle: 0 -> -90deg, 100 -> +90deg around (200, 200)
+        var needle = document.getElementById('needle');
+        if (needle) {
+          var angle = (data.score - 50) * 1.8;
+          needle.setAttribute('transform', 'rotate(' + angle.toFixed(1) + ' 200 200)');
+        }
+
+        // Arc fill: dashoffset = ARC_LEN * (1 - score/100)
+        var arc = document.getElementById('gauge-arc');
+        if (arc) {
+          arc.setAttribute('stroke-dasharray', ARC_LEN.toFixed(2));
+          arc.setAttribute('stroke-dashoffset', (ARC_LEN * (1 - data.score / 100)).toFixed(2));
+        }
+
+        // Per-indicator rows
+        (data.indicators || []).forEach(function (ind) {
+          var row = document.querySelector('[data-bm-key="' + ind.key + '"]');
+          if (!row) return;
+          var bar = row.querySelector('.bar-fill');
+          var val = row.querySelector('.sub-val');
+          var raw = row.querySelector('[data-bm-raw]');
+
+          if (typeof ind.score === 'number') {
+            if (bar) bar.style.width = ind.score + '%';
+            if (val) val.textContent = ind.score;
+            row.classList.remove('is-stale');
+          } else {
+            if (bar) bar.style.width = '0%';
+            if (val) val.textContent = '—';
+            row.classList.add('is-stale');
+          }
+
+          if (raw) raw.textContent = fmtRaw(ind);
+
+          // Google Trends weight line: dynamically reflect "currently X"
+          if (ind.key === 'google_trends') {
+            var w = row.querySelector('[data-bm-gt-weight]');
+            if (w) {
+              var current = (typeof ind.score === 'number') ? ind.score : '—';
+              w.textContent = (ind.active ? 'ACTIVE override · ' : 'Active when ≥ 80 · ')
+                            + 'currently ' + current;
+            }
+          }
+        });
+
+        // Footer "Last updated"
+        var upd = document.querySelector('[data-bm="updated"]');
+        if (upd) upd.textContent = fmtAsof(data.asof);
+      }
+
+      fetch('data/barometer.json', { cache: 'no-cache' })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (d) { if (d) applyBarometer(d); })
+        .catch(function () { /* keep placeholders */ });
+    })();
+  </script>
+
+  <script>
+    // Waitlist form: POST to /api/waitlist (Cloudflare Pages Function),
+    // replace form with thank-you on success, surface validation errors inline.
+    (function () {
+      var form = document.getElementById('waitlist-form');
+      if (!form) return;
+
+      var status = form.querySelector('[data-wl-status]');
+      var button = form.querySelector('button[type="submit"]');
+      var wrap = form.parentElement;
+
+      function setStatus(msg, ok) {
+        if (!status) return;
+        status.textContent = msg || '';
+        status.classList.toggle('ok', !!ok);
+      }
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        setStatus('');
+
+        // Light client-side validation — the function re-validates anyway.
+        var name = form.elements['name'].value.trim();
+        var email = form.elements['email'].value.trim();
+        if (!name) { setStatus('Please enter your name.'); return; }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+          setStatus('Please enter a valid email address.'); return;
+        }
+
+        button.disabled = true;
+        var oldLabel = button.textContent;
+        button.textContent = 'Sending…';
+
+        try {
+          var res = await fetch('/api/waitlist', {
+            method: 'POST',
+            body: new FormData(form),
+          });
+          var data = {};
+          try { data = await res.json(); } catch (_) {}
+
+          if (res.ok && data.ok) {
+            wrap.innerHTML =
+              '<div class="waitlist-success">' +
+                '<h3>Thanks — you’re on the list.</h3>' +
+                '<p>I’ll be in touch closer to the May 2026 launch. ' +
+                'In the meantime, feel free to email ' +
+                '<a href="mailto:askme@fyfa.ca">askme@fyfa.ca</a> with any questions.</p>' +
+              '</div>';
+            return;
+          }
+          setStatus(data.error || 'Something went wrong. Please try again or email askme@fyfa.ca.');
+        } catch (err) {
+          setStatus('Network error. Please try again or email askme@fyfa.ca.');
+        } finally {
+          button.disabled = false;
+          button.textContent = oldLabel;
+        }
+      });
+    })();
+  </script>
+
+  <script>
+    // Hydrate the published-articles grid from data/articles.json.
+    // Falls back silently to the static cards if the fetch fails.
+    (function () {
+      var grid = document.getElementById('articles-grid');
+      if (!grid) return;
+
+      function escapeHTML(s) {
+        if (s == null) return '';
+        return String(s)
+          .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+      }
+
+      function fmtPct(n) {
+        if (typeof n !== 'number') return '—';
+        var s = (n >= 0 ? '+' : '') + n.toFixed(1) + '%';
+        return s;
+      }
+
+      function fmtPts(n) {
+        if (typeof n !== 'number') return '—';
+        return (n >= 0 ? '+' : '') + n.toFixed(1) + ' pts';
+      }
+
+      function classFor(n) { return (typeof n === 'number' && n < 0) ? 'neg' : 'pos'; }
+
+      function fmtDate(iso) {
+        if (!iso) return '';
+        var d = new Date(iso + 'T00:00:00Z');
+        if (isNaN(d.getTime())) return iso;
+        return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+      }
+
+      function cardHTML(a) {
+        var metaPill = a.ticker ? a.ticker : (a.label || '');
+        var metaRight = (a.pub_date_pretty || fmtDate(a.pub_date)) +
+                        (a.platform_label ? ' · ' + escapeHTML(a.platform_label) : '');
+
+        var perf = '';
+        if (typeof a.return_pct === 'number' && typeof a.spy_return_pct === 'number') {
+          perf =
+            '<div class="perf-row">' +
+              '<div class="cell">' +
+                '<div class="label">Return since pub.</div>' +
+                '<div class="val ' + classFor(a.return_pct) + '">' + fmtPct(a.return_pct) + '</div>' +
+              '</div>' +
+              '<div class="cell">' +
+                '<div class="label">SPY</div>' +
+                '<div class="val ' + classFor(a.spy_return_pct) + '">' + fmtPct(a.spy_return_pct) + '</div>' +
+              '</div>' +
+            '</div>';
+        }
+
+        var platformClass = a.platform === 'seekingalpha' ? 'is-sa'
+                          : a.platform === 'fidelity'    ? 'is-fid'
+                          : '';
+
+        return (
+          '<article class="article-card ' + platformClass + '">' +
+            '<div class="article-body">' +
+              '<div class="article-meta">' +
+                (metaPill ? '<span class="ticker">' + escapeHTML(metaPill) + '</span>' : '') +
+                '<span>' + metaRight + '</span>' +
+              '</div>' +
+              '<div class="article-title">' +
+                '<a href="' + escapeHTML(a.url) + '" target="_blank" rel="noopener">' +
+                  escapeHTML(a.title) +
+                '</a>' +
+              '</div>' +
+              (a.summary ? '<div class="article-summary">' + escapeHTML(a.summary) + '</div>' : '') +
+              perf +
+            '</div>' +
+          '</article>'
+        );
+      }
+
+      function applyArticles(payload) {
+        if (!payload || !Array.isArray(payload.articles) || payload.articles.length === 0) return;
+
+        // Render grid
+        grid.innerHTML = payload.articles.map(cardHTML).join('');
+
+        // Rollup stats — show only if we have any tickered articles
+        var s = payload.summary || {};
+        if (s.n_with_returns && s.avg_return_pct != null) {
+          var rollup = document.querySelector('.rollup');
+          if (rollup) {
+            rollup.style.display = 'flex';
+            var ar = document.getElementById('avg-return');
+            var as = document.getElementById('avg-spy');
+            var aa = document.getElementById('avg-alpha');
+            var lu = document.getElementById('last-updated');
+            if (ar) {
+              ar.textContent = fmtPct(s.avg_return_pct);
+              ar.classList.toggle('neg', s.avg_return_pct < 0);
+              ar.classList.toggle('pos', s.avg_return_pct >= 0);
+            }
+            if (as) {
+              as.textContent = fmtPct(s.avg_spy_pct);
+              as.classList.toggle('neg', s.avg_spy_pct < 0);
+              as.classList.toggle('pos', s.avg_spy_pct >= 0);
+            }
+            if (aa) {
+              aa.textContent = fmtPts(s.avg_alpha_pct);
+              aa.classList.toggle('neg', s.avg_alpha_pct < 0);
+              aa.classList.toggle('pos', s.avg_alpha_pct >= 0);
+            }
+            if (lu) lu.textContent = fmtDate(payload.asof);
+          }
+        }
+      }
+
+      fetch('data/articles.json', { cache: 'no-cache' })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (d) { if (d) applyArticles(d); })
+        .catch(function () { /* keep static cards */ });
     })();
   </script>
 </body>

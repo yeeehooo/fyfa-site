@@ -1,0 +1,44 @@
+name: Update market barometer
+
+on:
+  schedule:
+    # Mondays at 14:00 UTC (~ 7am Pacific). Cron is UTC.
+    - cron: "0 14 * * 1"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: barometer
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: pip install -r scripts/barometer/requirements.txt
+
+      - name: Build barometer.json
+        run: python -m scripts.barometer.build_barometer
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "fyfa-bot"
+          git config user.email "bot@fyfa.ca"
+          git add data/barometer.json data/history/
+          if git diff --cached --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+          git commit -m "data: refresh barometer ($(date -u +%Y-%m-%d))"
+          git push

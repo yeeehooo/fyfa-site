@@ -1,0 +1,74 @@
+{
+  "_comment": "Hand-curated list of articles to display. The build_articles job reads this and computes return-since-pub via yfinance for any entry with a ticker. The site links straight out to each article — we don't scrape titles or images.",
+  "articles": [
+    {
+      "url": "https://seekingalpha.com/article/4762695-wise-moat-widens-as-global-network-supports-cost-leadership",
+      "title": "Wise: Moat Widens as Global Network Supports Cost Leadership",
+      "ticker": "WPLCF",
+      "pub_date": "2025-02-27",
+      "platform": "seekingalpha"
+    },
+    {
+      "url": "https://seekingalpha.com/article/4778047-prosus-best-proxy-to-internet-giant-tencent",
+      "title": "Prosus: Best Proxy to Internet Giant Tencent",
+      "ticker": "PROSY",
+      "pub_date": "2025-04-25",
+      "platform": "seekingalpha"
+    },
+    {
+      "url": "https://seekingalpha.com/article/4789546-joyy-deep-value-and-amazing-shareholder-returns",
+      "title": "JOYY: Deep Value and Amazing Shareholder Returns",
+      "ticker": "JOYY",
+      "pub_date": "2025-05-23",
+      "platform": "seekingalpha"
+    },
+    {
+      "url": "https://seekingalpha.com/article/4803772-canadian-national-railway-time-to-board-this-train-with-a-cheap-ticket",
+      "title": "Canadian National Railway: Time to Board This Train With a Cheap Ticket",
+      "ticker": "CNI",
+      "pub_date": "2025-07-24",
+      "platform": "seekingalpha"
+    },
+    {
+      "url": "https://seekingalpha.com/article/4815494-crocs-still-an-underrated-cash-cow",
+      "title": "Crocs: Still an Underrated Cash Cow",
+      "ticker": "CROX",
+      "pub_date": "2025-08-21",
+      "platform": "seekingalpha"
+    },
+    {
+      "url": "https://seekingalpha.com/article/4849637-suncor-energy-a-value-machine-with-rising-efficiency",
+      "title": "Suncor Energy: A Value Machine With Rising Efficiency",
+      "ticker": "SU",
+      "pub_date": "2025-12-03",
+      "platform": "seekingalpha"
+    },
+    {
+      "url": "https://www.fidelity.com.sg/articles/analysis-and-research/2024-01-25-optimism-balloons-from-japans-reflating-economy-1706179610989",
+      "title": "Optimism balloons from Japan's reflating economy",
+      "ticker": null,
+      "pub_date": "2024-01-25",
+      "platform": "fidelity",
+      "label": "Japan Reflation",
+      "summary": "Japan leads the world on bullish sentiment as its economy enters a reflating stage unique among developed nations."
+    },
+    {
+      "url": "https://www.fidelity.com.sg/articles/analysis-and-research/2023-12-21-indias-hopes-for-solar-dominance-dimmed-but-not-extinguished-1704188241829",
+      "title": "India's hopes for solar dominance dimmed but not extinguished",
+      "ticker": null,
+      "pub_date": "2023-12-21",
+      "platform": "fidelity",
+      "label": "India Solar",
+      "summary": "Two years after India revealed its ambitious 2030 solar power targets, the country's prospects for installing enough capacity on time are darkening."
+    },
+    {
+      "url": "https://www.fidelity.com.sg/articles/analysis-and-research/2024-05-16-embracing-the-korea-discount-1715922902572",
+      "title": "Embracing the Korea discount",
+      "ticker": null,
+      "pub_date": "2024-05-16",
+      "platform": "fidelity",
+      "label": "Korea Discount",
+      "summary": "Korea's chronically discounted equities are positioned for re-rating as governance reforms and corporate value-up programs take hold."
+    }
+  ]
+}
