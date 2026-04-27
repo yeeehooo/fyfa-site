@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Confirmation bias — FYFA explainer</title>
+  <meta name="description" content="Confirmation bias is the natural tendency to seek out, interpret, and remember information that supports our existing beliefs while ignoring or undervaluin" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #FCF8F1;
+      --bg-alt: #F3ECDE;
+      --ink: #1A2332;
+      --ink-muted: #5E5A54;
+      --rule: #E6DDCA;
+      --accent: #B8623A;
+      --accent-soft: #F2D6C3;
+      --card: #FFFFFF;
+      --shadow-sm: 0 1px 3px rgba(26,35,50,0.06), 0 2px 8px rgba(26,35,50,0.04);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; font-size: 17px; -webkit-font-smoothing: antialiased; }
+    h1 { font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: clamp(2.1rem, 4.5vw, 3.1rem); line-height: 1.12; letter-spacing: -0.02em; margin: 0 0 36px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    .site-nav { padding: 18px 0; border-bottom: 1px solid var(--rule); background: rgba(252,248,241,0.85); backdrop-filter: saturate(180%) blur(8px); position: sticky; top: 0; z-index: 50; }
+    .site-nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+    .site-logo { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.15rem; color: var(--ink); }
+    .back-link { font-size: 0.92rem; color: var(--ink-muted); }
+    .back-link:hover { color: var(--accent); }
+    article.explainer { padding: 64px 0 88px; }
+    .eyebrow { font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.78rem; color: var(--accent); font-weight: 600; margin-bottom: 18px; }
+    article.explainer p { font-family: 'Fraunces', Georgia, serif; font-size: 1.18rem; line-height: 1.65; color: var(--ink); margin: 0 0 22px; }
+    article.explainer p:first-of-type { font-size: 1.28rem; line-height: 1.55; }
+    article.explainer p strong { font-weight: 600; color: var(--ink); }
+    .formula {
+      display: flex; align-items: center; justify-content: center; gap: 14px;
+      flex-wrap: wrap;
+      margin: 18px 0 30px;
+      padding: 22px 28px;
+      background: var(--accent-soft);
+      border: 1px solid #EBC6AE;
+      border-radius: 12px;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.16rem;
+      color: #6B3520;
+      line-height: 1.4;
+    }
+    .formula .formula-label { font-weight: 600; }
+    .formula .formula-eq { font-style: italic; opacity: 0.7; font-size: 1.25rem; }
+    .formula .formula-rhs { display: inline-flex; align-items: center; }
+    .formula .frac {
+      display: inline-flex; flex-direction: column; align-items: center;
+      vertical-align: middle; line-height: 1.25;
+    }
+    .formula .frac-num { padding: 0 10px 6px; }
+    .formula .frac-den { padding: 6px 10px 0; border-top: 1.5px solid #B8623A; }
+    .footer-cta { margin-top: 56px; padding: 28px; background: var(--card); border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 12px; box-shadow: var(--shadow-sm); }
+    .footer-cta p { font-family: 'Inter', sans-serif !important; font-size: 0.98rem !important; line-height: 1.55 !important; margin: 0 !important; color: var(--ink-muted); }
+    .footer-cta strong { color: var(--ink); }
+    footer.site-footer { padding: 32px 0; background: var(--bg-alt); border-top: 1px solid var(--rule); font-size: 0.88rem; color: var(--ink-muted); text-align: center; }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a class="site-logo" href="../index.html">FYFA</a>
+      <a class="back-link" href="../index.html#materials">← Back to course materials</a>
+    </div>
+  </nav>
+
+  <article class="explainer">
+    <div class="container">
+      <div class="eyebrow">Explainer · Behavioral biases</div>
+      <h1>Confirmation bias</h1>
+      <p><strong>Confirmation bias</strong> is the natural tendency to seek out, interpret, and remember information that supports our existing beliefs while ignoring or undervaluing evidence that contradicts them.</p>
+      <p>In the world of investing, this bias acts as a filter that prevents us from seeing the full picture of a company’s health. When an investor falls in love with a stock, they often only read bullish research reports and follow social media accounts that share their optimism. The consequence is a dangerous "echo chamber" effect, which can lead to overconfidence, the dismissal of legitimate warning signs, and a failure to adjust one's strategy as the underlying fundamentals of an investment change.</p>
+      <p>A notable example involves many investors in the energy giant Enron before its collapse. Even as independent analysts and whistleblowers began raising red flags about the company’s opaque accounting practices, many loyal shareholders dismissed the critics as "short-sellers" or "people who didn't understand the new economy." Because they were so convinced of Enron’s prestige, they focused exclusively on the company's glowing press releases and ignored the mounting evidence of fraud until the stock price hit zero.</p>
+      <p>To combat this, you should actively seek out the "bear case" for every investment you own by reading dissenting opinions and questioning your own thesis. Cultivating a mindset of intellectual humility and maintaining a checklist of reasons why your investment might fail can help you remain objective in a shifting market.</p>
+      <p>The most effective way to break confirmation bias is to treat your beliefs as hypotheses to be tested, rather than truths to be defended.</p>
+      <div class="footer-cta">
+        <p>This is part of the material you'll meet across the course. The course launches <strong>May 2026</strong>. <a href="../index.html#waitlist">Join the waitlist →</a></p>
+      </div>
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <div class="container">© 2026 FYFA · <a href="../index.html">fyfa.ca</a></div>
+  </footer>
+</body>
+</html>

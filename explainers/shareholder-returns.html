@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shareholder returns — FYFA explainer</title>
+  <meta name="description" content="Shareholder returns are the total profits a company distributes to its owners, primarily through direct cash dividends and share buybacks that increase the" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #FCF8F1;
+      --bg-alt: #F3ECDE;
+      --ink: #1A2332;
+      --ink-muted: #5E5A54;
+      --rule: #E6DDCA;
+      --accent: #B8623A;
+      --accent-soft: #F2D6C3;
+      --card: #FFFFFF;
+      --shadow-sm: 0 1px 3px rgba(26,35,50,0.06), 0 2px 8px rgba(26,35,50,0.04);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; font-size: 17px; -webkit-font-smoothing: antialiased; }
+    h1 { font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: clamp(2.1rem, 4.5vw, 3.1rem); line-height: 1.12; letter-spacing: -0.02em; margin: 0 0 36px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    .site-nav { padding: 18px 0; border-bottom: 1px solid var(--rule); background: rgba(252,248,241,0.85); backdrop-filter: saturate(180%) blur(8px); position: sticky; top: 0; z-index: 50; }
+    .site-nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+    .site-logo { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.15rem; color: var(--ink); }
+    .back-link { font-size: 0.92rem; color: var(--ink-muted); }
+    .back-link:hover { color: var(--accent); }
+    article.explainer { padding: 64px 0 88px; }
+    .eyebrow { font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.78rem; color: var(--accent); font-weight: 600; margin-bottom: 18px; }
+    article.explainer p { font-family: 'Fraunces', Georgia, serif; font-size: 1.18rem; line-height: 1.65; color: var(--ink); margin: 0 0 22px; }
+    article.explainer p:first-of-type { font-size: 1.28rem; line-height: 1.55; }
+    article.explainer p strong { font-weight: 600; color: var(--ink); }
+    .formula {
+      display: flex; align-items: center; justify-content: center; gap: 14px;
+      flex-wrap: wrap;
+      margin: 18px 0 30px;
+      padding: 22px 28px;
+      background: var(--accent-soft);
+      border: 1px solid #EBC6AE;
+      border-radius: 12px;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.16rem;
+      color: #6B3520;
+      line-height: 1.4;
+    }
+    .formula .formula-label { font-weight: 600; }
+    .formula .formula-eq { font-style: italic; opacity: 0.7; font-size: 1.25rem; }
+    .formula .formula-rhs { display: inline-flex; align-items: center; }
+    .formula .frac {
+      display: inline-flex; flex-direction: column; align-items: center;
+      vertical-align: middle; line-height: 1.25;
+    }
+    .formula .frac-num { padding: 0 10px 6px; }
+    .formula .frac-den { padding: 6px 10px 0; border-top: 1.5px solid #B8623A; }
+    .footer-cta { margin-top: 56px; padding: 28px; background: var(--card); border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 12px; box-shadow: var(--shadow-sm); }
+    .footer-cta p { font-family: 'Inter', sans-serif !important; font-size: 0.98rem !important; line-height: 1.55 !important; margin: 0 !important; color: var(--ink-muted); }
+    .footer-cta strong { color: var(--ink); }
+    footer.site-footer { padding: 32px 0; background: var(--bg-alt); border-top: 1px solid var(--rule); font-size: 0.88rem; color: var(--ink-muted); text-align: center; }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a class="site-logo" href="../index.html">FYFA</a>
+      <a class="back-link" href="../index.html#materials">← Back to course materials</a>
+    </div>
+  </nav>
+
+  <article class="explainer">
+    <div class="container">
+      <div class="eyebrow">Explainer · Investment concepts</div>
+      <h1>Shareholder returns</h1>
+      <p><strong>Shareholder returns</strong> are the total profits a company distributes to its owners, primarily through direct cash dividends and share buybacks that increase the value of remaining shares.</p>
+      <div class="formula"><span class="formula-label">Shareholder Yield</span><span class="formula-eq">=</span><span class="formula-rhs"><span class="frac"><span class="frac-num">Cash Dividends Paid + Net Share Repurchases</span><span class="frac-den">Market Capitalization</span></span></span></div>
+      <p>This concept matters because it reveals how management prioritizes its "excess" cash once the bills are paid and the business is funded. While high-growth companies reinvest every penny, mature and efficient firms use buybacks to reduce share count—making each of your shares worth a larger percentage of the company—and dividends to provide immediate income. The consequence of ignoring this is often "diworsification," where companies waste cash on bad acquisitions instead of simply giving it back to the rightful owners.</p>
+      <p>A powerful recent example is <strong>Apple</strong> under the leadership of Tim Cook. Despite being one of the world's largest companies, Apple recognized it generated more cash than it could possibly spend on new products, so it launched a massive capital return program. By 2024 and 2025, Apple was returning over <strong>$90 billion</strong> annually through buybacks and dividends, effectively shrinking its share count by nearly <strong>40%</strong> over a decade and driving massive gains for long-term holders even during periods of modest revenue growth.</p>
+      <p>To judge a management team's quality, you must evaluate whether they are being responsible stewards of your capital or if they are hoarding cash that belongs to you.</p>
+      <p>The most investor-friendly companies are those that view their shareholders as partners who deserve a slice of the actual cash profits.</p>
+      <div class="footer-cta">
+        <p>This is part of the material you'll meet across the course. The course launches <strong>May 2026</strong>. <a href="../index.html#waitlist">Join the waitlist →</a></p>
+      </div>
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <div class="container">© 2026 FYFA · <a href="../index.html">fyfa.ca</a></div>
+  </footer>
+</body>
+</html>

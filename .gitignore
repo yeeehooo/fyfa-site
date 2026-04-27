@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Node (in case we ever add tooling)
+node_modules/
+
+# Course slide deck — kept on local disk, not in repo
+AI-assisted Investing.pptx
