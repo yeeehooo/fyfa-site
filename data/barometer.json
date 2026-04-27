@@ -1,0 +1,89 @@
+{
+  "asof": "2026-04-27",
+  "score": 70,
+  "band": "leaning_greed",
+  "indicators": [
+    {
+      "key": "shiller_pe",
+      "name": "Shiller PE",
+      "weight": 0.25,
+      "value": null,
+      "value_unit": "ratio",
+      "score": null,
+      "asof": null,
+      "stale": true,
+      "error": "no rows parsed from multpl.com"
+    },
+    {
+      "key": "buffett",
+      "name": "Buffett indicator",
+      "weight": 0.25,
+      "value": null,
+      "value_unit": "ratio",
+      "score": null,
+      "asof": null,
+      "stale": true,
+      "error": "Buffett: missing FRED data"
+    },
+    {
+      "key": "margin_debt",
+      "name": "FINRA margin debt / GDP",
+      "weight": 0.2,
+      "value": null,
+      "value_unit": "ratio",
+      "score": null,
+      "asof": null,
+      "stale": true,
+      "error": "Margin debt: missing FRED data"
+    },
+    {
+      "key": "aaii_cash",
+      "name": "AAII retail cash (inverted)",
+      "weight": 0.2,
+      "value": 0.1502,
+      "value_unit": "fraction",
+      "score": 72,
+      "zscore": -0.86,
+      "asof": "2026-03-31",
+      "source": "AAII Asset Allocation Survey (manually maintained)",
+      "source_url": "https://www.aaii.com/journal/article/asset-allocation-survey",
+      "stale": false
+    },
+    {
+      "key": "fear_greed",
+      "name": "CNN Fear & Greed Index",
+      "weight": 0.1,
+      "value": 67.3428571428571,
+      "value_unit": "index_0_100",
+      "score": 67,
+      "asof": "2026-04-27",
+      "source": "CNN Business Fear & Greed Index",
+      "source_url": "https://www.cnn.com/markets/fear-and-greed",
+      "rating": "greed",
+      "stale": false
+    },
+    {
+      "key": "google_trends",
+      "name": "Google Trends 'stock market'",
+      "x_factor": true,
+      "active": false,
+      "weight": 0.0,
+      "value": null,
+      "value_unit": "index_0_100",
+      "score": null,
+      "asof": null,
+      "source": null,
+      "source_url": null,
+      "stale": true,
+      "error": "pytrends fetch failed: Retry.__init__() got an unexpected keyword argument 'method_whitelist'"
+    }
+  ],
+  "weights": {
+    "shiller_pe": 0.25,
+    "buffett": 0.25,
+    "margin_debt": 0.2,
+    "aaii_cash": 0.2,
+    "fear_greed": 0.1
+  },
+  "methodology": "Each structural indicator (Shiller PE, Buffett, margin debt, AAII cash) is converted to a 0-100 sub-score via a rolling z-score (z=-2 -> 0, z=+2 -> 100). AAII cash is inverted: high cash = fear = low score. CNN F&G is used directly (already 0-100). Google Trends 'stock market' acts as an X-factor override: when its score reaches 80 the composite is floored at that level."
+}
