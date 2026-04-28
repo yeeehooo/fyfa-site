@@ -1,0 +1,35 @@
+# Files in the repo that should NOT be served as public static assets.
+# Cloudflare's static-assets engine respects this file (similar to .gitignore).
+
+# Worker source / build artifacts
+_worker.js
+functions/
+.wrangler/
+
+# Repo metadata
+.git/
+.gitignore
+.github/
+.assetsignore
+
+# Documentation we don't need to publish
+README.md
+SETUP.md
+
+# Build / data scripts (server-side only)
+scripts/
+
+# Internal data sources (the *output* JSONs in /data/ stay served)
+data/aaii-history.csv
+data/articles-meta.json
+data/history/
+
+# Editor / OS noise
+.DS_Store
+**/.DS_Store
+__pycache__/
+*.pyc
+*.pyo
+
+# Course slide deck (already gitignored, belt & braces)
+*.pptx
