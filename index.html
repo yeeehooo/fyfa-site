@@ -232,8 +232,10 @@
     .stat-card .stat-value.neg { color: var(--red); }
     .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     .article-card { background: var(--card); border-radius: 14px; overflow: hidden; border: 1px solid var(--rule); border-left: 3px solid var(--rule); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; transition: transform 0.15s ease, box-shadow 0.15s ease; }
-    .article-card.is-sa  { border-left-color: var(--accent); }
-    .article-card.is-fid { border-left-color: #6E8F6F; }
+    .articles-grid .article-card:nth-child(4n+1) { background: #FAEDE2; border-left-color: #B8623A; }
+    .articles-grid .article-card:nth-child(4n+2) { background: #F3ECDE; border-left-color: #C89434; }
+    .articles-grid .article-card:nth-child(4n+3) { background: #E8EFE5; border-left-color: #6E8F6F; }
+    .articles-grid .article-card:nth-child(4n+4) { background: #E4ECF0; border-left-color: #4A8FA8; }
     .article-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
     .article-body { padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
     .article-meta { font-size: 0.78rem; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.06em; display: flex; gap: 10px; }
@@ -651,25 +653,6 @@
       <div class="eyebrow">Investment writing</div>
       <h2 style="max-width: 20ch;">Yee's published analysis</h2>
       <p style="max-width: 60ch; margin-top: 14px; margin-bottom: 40px; color: var(--ink-muted);">The articles below are NOT intended to recommend any stocks. They are presented here just to give a sense of the instructor's investment philosophy and writing style.</p>
-
-      <div class="rollup" style="display:none;">
-        <div class="stat-card">
-          <div class="stat-label">Average return since pub.</div>
-          <div class="stat-value pos" id="avg-return">+18.4%</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Average SPY over same windows</div>
-          <div class="stat-value pos" id="avg-spy">+11.2%</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Avg outperformance vs SPX</div>
-          <div class="stat-value pos" id="avg-alpha">+7.2 pts</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Last updated</div>
-          <div class="stat-value" style="font-size:1.1rem; color:var(--ink-muted);" id="last-updated">— pending deploy —</div>
-        </div>
-      </div>
 
       <div class="articles-grid" id="articles-grid">
         <!-- SA articles (placeholder returns, real links) -->
