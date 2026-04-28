@@ -24,13 +24,11 @@ export async function onRequestGet(context) {
     const debug = {
       error: "Unauthorized",
       env_has_token: !!env.ADMIN_TOKEN,
+      env_keys: Object.keys(env || {}),
       expected_len: expected.length,
       received_len: token.length,
-      expected_head: expected.slice(0, 4),
-      expected_tail: expected.slice(-4),
       received_head: token.slice(0, 4),
       received_tail: token.slice(-4),
-      strict_match: token === expected,
     };
     return new Response(JSON.stringify(debug, null, 2), {
       status: 401,
