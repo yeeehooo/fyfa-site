@@ -47,11 +47,20 @@ def fetch_returns(ticker: str, pub_date: str) -> dict | None:
     end = (date.today() + timedelta(days=1)).isoformat()
     start = (pub_dt.date() - timedelta(days=2)).isoformat()
 
+    def _flatten(df):
+        # yfinance >= 0.2.40 returns a MultiIndex column DataFrame from
+        # yf.download(); collapse to single-level if needed.
+        if df is not None and not df.empty and hasattr(df.columns, "nlevels") and df.columns.nlevels > 1:
+            df = df.copy()
+            df.columns = df.columns.get_level_values(0)
+        return df
+
     def first_close_on_or_after(symbol: str) -> tuple[float, str] | None:
         try:
-            df = yf.download(symbol, start=start, end=end, progress=False, auto_adjust=True)
+            df = yf.Ticker(symbol).history(start=start, end=end, auto_adjust=True)
         except Exception:
             return None
+        df = _flatten(df)
         if df is None or df.empty or "Close" not in df.columns:
             return None
         df = df.dropna(subset=["Close"])
@@ -63,9 +72,10 @@ def fetch_returns(ticker: str, pub_date: str) -> dict | None:
 
     def latest_close(symbol: str) -> tuple[float, str] | None:
         try:
-            df = yf.download(symbol, period="10d", progress=False, auto_adjust=True)
+            df = yf.Ticker(symbol).history(period="10d", auto_adjust=True)
         except Exception:
             return None
+        df = _flatten(df)
         if df is None or df.empty or "Close" not in df.columns:
             return None
         df = df.dropna(subset=["Close"])
