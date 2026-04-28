@@ -11,6 +11,12 @@
     "binding": "ASSETS",
     "not_found_handling": "404-page"
   },
+  "kv_namespaces": [
+    {
+      "binding": "WAITLIST",
+      "id": "927ed83cb3ec4fcebd19621436e79499"
+    }
+  ],
   "compatibility_flags": [
     "nodejs_compat"
   ]
