@@ -19,7 +19,23 @@ export async function onRequestGet(context) {
   const auth = request.headers.get("authorization") || "";
   const token = auth.replace(/^Bearer\s+/i, "").trim();
   if (!env.ADMIN_TOKEN || token !== env.ADMIN_TOKEN) {
-    return new Response("Unauthorized", { status: 401 });
+    // TEMPORARY DEBUG — remove after diagnosing the 401.
+    const expected = env.ADMIN_TOKEN || "";
+    const debug = {
+      error: "Unauthorized",
+      env_has_token: !!env.ADMIN_TOKEN,
+      expected_len: expected.length,
+      received_len: token.length,
+      expected_head: expected.slice(0, 4),
+      expected_tail: expected.slice(-4),
+      received_head: token.slice(0, 4),
+      received_tail: token.slice(-4),
+      strict_match: token === expected,
+    };
+    return new Response(JSON.stringify(debug, null, 2), {
+      status: 401,
+      headers: { "Content-Type": "application/json" },
+    });
   }
   if (!env.WAITLIST) {
     return new Response("WAITLIST KV not bound", { status: 500 });
