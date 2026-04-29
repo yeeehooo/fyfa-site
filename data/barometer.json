@@ -1,6 +1,6 @@
 {
-  "asof": "2026-04-27",
-  "score": 70,
+  "asof": "2026-04-29",
+  "score": 69,
   "band": "leaning_greed",
   "indicators": [
     {
@@ -53,10 +53,10 @@
       "key": "fear_greed",
       "name": "CNN Fear & Greed Index",
       "weight": 0.1,
-      "value": 67.3428571428571,
+      "value": 63.6571428571429,
       "value_unit": "index_0_100",
-      "score": 67,
-      "asof": "2026-04-27",
+      "score": 64,
+      "asof": "2026-04-29",
       "source": "CNN Business Fear & Greed Index",
       "source_url": "https://www.cnn.com/markets/fear-and-greed",
       "rating": "greed",
