@@ -29,12 +29,13 @@ HISTORY_PATH = HISTORY_DIR / "shiller_pe.csv"
 
 # Multiple regex strategies, tried in order. First one that yields rows wins.
 ROW_REGEXES = [
-    # Strict: <td>Date</td><td>Value</td>
+    # Strict: <td>Date</td><td> &#x2002; Value </td> — handles HTML entities
+    # and arbitrary whitespace inside the value cell.
     re.compile(
         r"<td[^>]*>\s*(?:<a[^>]*>)?\s*"
         r"([A-Z][a-z]{2,8}\s+\d{1,2},\s*\d{4})"
         r"\s*(?:</a>)?\s*</td>\s*"
-        r"<td[^>]*>\s*([\d.]+)\s*</td>",
+        r"<td[^>]*>[^<\d-]*(-?\d{1,3}\.\d{1,2})\s*</td>",
         re.IGNORECASE | re.DOTALL,
     ),
     # Looser: any consecutive Date / number cells, allowing newlines & extra tags
