@@ -1,7 +1,7 @@
 {
   "asof": "2026-04-29",
-  "score": 69,
-  "band": "leaning_greed",
+  "score": 83,
+  "band": "greed",
   "indicators": [
     {
       "key": "shiller_pe",
@@ -18,12 +18,14 @@
       "key": "buffett",
       "name": "Buffett indicator",
       "weight": 0.25,
-      "value": null,
+      "value": 224.4211,
       "value_unit": "ratio",
-      "score": null,
-      "asof": null,
-      "stale": true,
-      "error": "Buffett: missing FRED data"
+      "score": 100,
+      "zscore": 2.45,
+      "asof": "2026-04-01",
+      "source": "yfinance ^DWCF / FRED GDP",
+      "source_url": "https://finance.yahoo.com/quote/%5EDWCF",
+      "stale": false
     },
     {
       "key": "margin_debt",
@@ -34,7 +36,7 @@
       "score": null,
       "asof": null,
       "stale": true,
-      "error": "Margin debt: missing FRED data"
+      "error": "margin-debt-history.csv empty"
     },
     {
       "key": "aaii_cash",
