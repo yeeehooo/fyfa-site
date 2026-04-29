@@ -99,8 +99,15 @@ def fetch() -> dict:
             print(f"  [Shiller debug] regex #{i} matched only {len(seen)} rows; trying next")
 
     if not rows:
-        snippet = html[:500].replace("\n", " ")
-        print(f"  [Shiller debug] no rows parsed. body snippet: {snippet!r}")
+        # Find a section of the body that contains a recent year so we can see
+        # how multpl.com is actually rendering the data table now.
+        m = re.search(r"(202[0-9]|201[5-9])", html)
+        if m:
+            start = max(0, m.start() - 200)
+            snippet = html[start:start + 800].replace("\n", " ")
+            print(f"  [Shiller debug] body near year match (offset {m.start()}): {snippet!r}")
+        else:
+            print(f"  [Shiller debug] no recent year in body. head: {html[:500]!r}")
         return {"error": "no rows parsed from multpl.com", "history": []}
 
     write_csv(HISTORY_PATH, rows, ("date", "value"))

@@ -1,18 +1,16 @@
-"""Fetch the Buffett indicator: Wilshire 5000 / GDP.
+"""Fetch the Buffett indicator: broad equity market / GDP.
 
-Both series are available from FRED without an API key:
-  - WILL5000PR  : Wilshire 5000 Total Market Full Cap Index, daily
-  - GDP         : Gross Domestic Product, quarterly
+Originally used FRED's WILL5000PR (Wilshire 5000) but FRED removed
+Wilshire data on June 3, 2024. We now use the S&P 500 (^GSPC) from
+yfinance as a market proxy. For z-scoring purposes this is fine — the
+S&P 500 and Wilshire 5000 are 99%+ correlated over the 20-year window
+we use.
 
-We compute the ratio at each Wilshire date by carrying forward the most
-recent GDP observation. The ratio is dimensionless but commonly expressed
-as Wilshire / GDP * 100 (i.e. ~150 means market cap ~ 1.5x GDP).
-
-A 20-year rolling z-score of the monthly ratio gives the sub-score.
+GDP still comes from FRED (no key required).
 """
 from __future__ import annotations
 
-from datetime import date
+from datetime import date, datetime, timedelta
 
 from . import fetch_fred
 from .common import HISTORY_DIR, write_csv
@@ -20,24 +18,51 @@ from .common import HISTORY_DIR, write_csv
 HISTORY_PATH = HISTORY_DIR / "buffett.csv"
 
 
+def _fetch_market_monthly() -> dict[str, float]:
+    """Return {YYYY-MM: last close} for ^GSPC, going back ~25 years."""
+    try:
+        import yfinance as yf  # type: ignore
+    except Exception as e:
+        print(f"  [Buffett debug] yfinance import failed: {e}")
+        return {}
+
+    try:
+        df = yf.Ticker("^GSPC").history(period="25y", auto_adjust=True)
+    except Exception as e:
+        print(f"  [Buffett debug] yfinance fetch failed: {e}")
+        return {}
+
+    if df is None or df.empty or "Close" not in df.columns:
+        print("  [Buffett debug] yfinance returned empty / unexpected schema")
+        return {}
+
+    df = df.dropna(subset=["Close"])
+    by_month: dict[str, tuple[str, float]] = {}
+    for ts, row in df.iterrows():
+        d = ts.date().isoformat() if hasattr(ts, "date") else str(ts)[:10]
+        ym = d[:7]
+        # Keep latest date in each month
+        if ym not in by_month or d > by_month[ym][0]:
+            by_month[ym] = (d, float(row["Close"]))
+    return {ym: v for ym, (_, v) in by_month.items()}
+
+
 def _to_monthly_last(rows: list[dict[str, str]]) -> dict[str, float]:
-    """Reduce daily/weekly rows to month -> last-of-month value."""
-    by_month: dict[str, float] = {}
+    """Reduce FRED rows to month -> last value within that month."""
+    by_month: dict[str, tuple[str, float]] = {}
     for r in rows:
-        d = r["date"]  # YYYY-MM-DD
+        d = r["date"]
         try:
             v = float(r["value"])
         except ValueError:
             continue
-        ym = d[:7]  # YYYY-MM
-        # Keep the latest date within the month
-        if ym not in by_month or d >= getattr(_to_monthly_last, "_seen", {}).get(ym, ""):
-            by_month[ym] = v
-    return by_month
+        ym = d[:7]
+        if ym not in by_month or d > by_month[ym][0]:
+            by_month[ym] = (d, v)
+    return {ym: v for ym, (_, v) in by_month.items()}
 
 
 def _carry_forward(by_month: dict[str, float], months: list[str]) -> dict[str, float]:
-    """Forward-fill values to every month in ``months`` (sorted)."""
     out: dict[str, float] = {}
     last: float | None = None
     for ym in sorted(months):
@@ -49,27 +74,24 @@ def _carry_forward(by_month: dict[str, float], months: list[str]) -> dict[str, f
 
 
 def fetch() -> dict:
-    will = fetch_fred.fetch("WILL5000PR")
-    gdp = fetch_fred.fetch("GDP")
-    if not will or not gdp:
-        return {"error": "Buffett: missing FRED data", "history": []}
+    market_m = _fetch_market_monthly()
+    gdp_rows = fetch_fred.fetch("GDP")
+    if not market_m:
+        return {"error": "Buffett: market index unavailable", "history": []}
+    if not gdp_rows:
+        return {"error": "Buffett: GDP unavailable from FRED", "history": []}
 
-    will_m = _to_monthly_last(will)
-    gdp_m = _to_monthly_last(gdp)
-    if not will_m or not gdp_m:
-        return {"error": "Buffett: empty after monthly reduction", "history": []}
-
-    months = sorted(set(list(will_m.keys()) + list(gdp_m.keys())))
-    will_ff = _carry_forward(will_m, months)
+    gdp_m = _to_monthly_last(gdp_rows)
+    months = sorted(set(list(market_m.keys()) + list(gdp_m.keys())))
     gdp_ff = _carry_forward(gdp_m, months)
 
     rows: list[dict[str, str]] = []
     for ym in months:
-        w = will_ff.get(ym)
+        m = market_m.get(ym)
         g = gdp_ff.get(ym)
-        if w is None or g is None or g == 0:
+        if m is None or g is None or g == 0:
             continue
-        ratio = (w / g) * 100  # rough convention; magnitude matters less than z-score
+        ratio = (m / g) * 100  # arbitrary scale; z-score is what matters
         rows.append({"date": f"{ym}-01", "value": f"{ratio:.4f}"})
 
     if not rows:
@@ -80,8 +102,8 @@ def fetch() -> dict:
     return {
         "asof": latest["date"],
         "value": float(latest["value"]),
-        "source": "FRED (WILL5000PR / GDP)",
-        "source_url": "https://fred.stlouisfed.org/series/WILL5000PR",
+        "source": "yfinance ^GSPC / FRED GDP",
+        "source_url": "https://finance.yahoo.com/quote/%5EGSPC",
         "history": rows,
     }
 
