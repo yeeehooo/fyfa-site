@@ -28,3 +28,4 @@ AI-assisted Investing.pptx
 !.dev.vars.example
 .env*
 !.env.example
+waitlist.csv
