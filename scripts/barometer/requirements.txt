@@ -1,3 +1,4 @@
 requests>=2.31
 yfinance>=0.2.40
+urllib3<2
 pytrends>=4.9
