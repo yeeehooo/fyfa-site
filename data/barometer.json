@@ -74,14 +74,14 @@
       "x_factor": true,
       "active": false,
       "weight": 0.0,
-      "value": null,
+      "value": 50.0,
       "value_unit": "index_0_100",
-      "score": null,
-      "asof": null,
-      "source": null,
-      "source_url": null,
-      "stale": true,
-      "error": "pytrends fetch failed: Retry.__init__() got an unexpected keyword argument 'method_whitelist'"
+      "score": 50,
+      "asof": "2026-04-19",
+      "source": "Google Trends ('stock market', US, weekly)",
+      "source_url": "https://trends.google.com/trends/explore?q=stock%20market&geo=US",
+      "stale": false,
+      "error": null
     }
   ],
   "weights": {
