@@ -1,18 +1,20 @@
 {
-  "asof": "2026-04-29",
-  "score": 83,
+  "asof": "2026-04-30",
+  "score": 90,
   "band": "greed",
   "indicators": [
     {
       "key": "shiller_pe",
       "name": "Shiller PE",
       "weight": 0.25,
-      "value": null,
+      "value": 40.53,
       "value_unit": "ratio",
-      "score": null,
-      "asof": null,
-      "stale": true,
-      "error": "no rows parsed from multpl.com"
+      "score": 100,
+      "zscore": 2.24,
+      "asof": "2026-04-29",
+      "source": "Robert Shiller / multpl.com",
+      "source_url": "https://www.multpl.com/shiller-pe/table/by-month",
+      "stale": false
     },
     {
       "key": "buffett",
@@ -31,12 +33,14 @@
       "key": "margin_debt",
       "name": "FINRA margin debt / GDP",
       "weight": 0.2,
-      "value": null,
+      "value": 3.8855,
       "value_unit": "ratio",
-      "score": null,
-      "asof": null,
-      "stale": true,
-      "error": "margin-debt-history.csv empty"
+      "score": 95,
+      "zscore": 1.81,
+      "asof": "2026-03-01",
+      "source": "FINRA margin debt (manually maintained) / FRED GDP",
+      "source_url": "https://www.finra.org/investors/insights/margin-statistics",
+      "stale": false
     },
     {
       "key": "aaii_cash",
