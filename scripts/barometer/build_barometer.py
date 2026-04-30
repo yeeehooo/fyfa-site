@@ -82,11 +82,12 @@ WEIGHTS: dict[str, float] = {
 }
 
 # Z-score window per indicator, in months. Structural valuation indicators
-# get 20 years; AAII gets 10 (shorter cycle, regime change in retail).
+# get 20 years; shorter-cycle leverage/sentiment indicators get 10 (post-QE
+# regime is structurally different from pre-2009 for margin/leverage data).
 WINDOWS: dict[str, int] = {
     "shiller_pe": 240,
     "buffett": 240,
-    "margin_debt": 80,   # quarterly series, 80q ~= 20yr
+    "margin_debt": 120,   # 10y monthly — post-QE regime baseline
     "aaii_cash": 120,
     "fear_greed": 60,
 }
