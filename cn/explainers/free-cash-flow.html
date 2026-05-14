@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>自由现金流 — FYFA 解析</title>
+  <meta name="description" content="自由现金流（FCF）是企业在支付所有运营费用和资本开支后，真正剩余的现金。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #FCF8F1; --bg-alt: #F3ECDE; --ink: #1A2332; --ink-muted: #5E5A54;
+      --rule: #E6DDCA; --accent: #B8623A; --accent-soft: #F2D6C3;
+      --card: #FFFFFF; --shadow-sm: 0 1px 3px rgba(26,35,50,0.06), 0 2px 8px rgba(26,35,50,0.04);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; font-size: 17px; -webkit-font-smoothing: antialiased; }
+    h1 { font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: clamp(2.1rem, 4.5vw, 3.1rem); line-height: 1.12; letter-spacing: -0.02em; margin: 0 0 36px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    .site-nav { padding: 18px 0; border-bottom: 1px solid var(--rule); background: rgba(252,248,241,0.85); backdrop-filter: saturate(180%) blur(8px); position: sticky; top: 0; z-index: 50; }
+    .site-nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+    .site-logo { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.15rem; color: var(--ink); }
+    .back-link { font-size: 0.92rem; color: var(--ink-muted); }
+    .back-link:hover { color: var(--accent); }
+    article.explainer { padding: 64px 0 88px; }
+    .eyebrow { font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.78rem; color: var(--accent); font-weight: 600; margin-bottom: 18px; }
+    article.explainer p { font-family: 'Fraunces', Georgia, serif; font-size: 1.18rem; line-height: 1.65; color: var(--ink); margin: 0 0 22px; }
+    article.explainer p:first-of-type { font-size: 1.28rem; line-height: 1.55; }
+    article.explainer p strong { font-weight: 600; color: var(--ink); }
+    .formula {
+      display: flex; align-items: center; justify-content: center; gap: 14px;
+      flex-wrap: wrap; margin: 18px 0 30px; padding: 22px 28px;
+      background: var(--accent-soft); border: 1px solid #EBC6AE; border-radius: 12px;
+      font-family: 'Fraunces', Georgia, serif; font-size: 1.16rem; color: #6B3520; line-height: 1.4;
+    }
+    .formula .formula-label { font-weight: 600; }
+    .formula .formula-eq { font-style: italic; opacity: 0.7; font-size: 1.25rem; }
+    .formula .formula-rhs { display: inline-flex; align-items: center; }
+    .footer-cta { margin-top: 56px; padding: 28px; background: var(--card); border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 12px; box-shadow: var(--shadow-sm); }
+    .footer-cta p { font-family: 'Inter', sans-serif !important; font-size: 0.98rem !important; line-height: 1.55 !important; margin: 0 !important; color: var(--ink-muted); }
+    .footer-cta strong { color: var(--ink); }
+    footer.site-footer { padding: 32px 0; background: var(--bg-alt); border-top: 1px solid var(--rule); font-size: 0.88rem; color: var(--ink-muted); text-align: center; }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a class="site-logo" href="../../cn/index.html">FYFA</a>
+      <a class="back-link" href="../../cn/index.html#materials">← 返回课程材料</a>
+    </div>
+  </nav>
+
+  <article class="explainer">
+    <div class="container">
+      <div class="eyebrow">解析 · 投资概念</div>
+      <h1>自由现金流</h1>
+      <p><strong>自由现金流（FCF）</strong>是企业在支付所有运营费用及资本开支后，真正剩余的现金。</p>
+      <div class="formula">
+        <span class="formula-label">自由现金流</span>
+        <span class="formula-eq">=</span>
+        <span class="formula-rhs">经营性现金流 - 资本支出</span>
+      </div>
+      <p>自由现金流是投资者最终极的现实检验，因为与会计利润不同，它很难被精巧的账务处理所操纵。它代表企业可以自由支配的资金，用于派发股息、回购股票或收购竞争对手，而无需借助更多外部融资。一家账面利润丰厚、自由现金流却为负的公司往往身陷困境——它消耗的现金远超实际产生的现金。</p>
+      <p>微软（Microsoft）在纳德拉（Satya Nadella）领导下的转型，是自由现金流重要性的有力佐证。公司早已盈利，但向云端订阅模式（Azure）的战略转型，彻底改写了其自由现金流格局——这一模式创造出庞大且持续的现金流入，与传统软件制造相比所需的维护资本相对较低。到2025年，微软每年产生逾<strong>700亿美元</strong>的自由现金流，得以同时向AI初创公司大举投资并向股东大量回馈，有力地证明了现金——而非仅仅是利润——才是增长的命脉。</p>
+      <p>要正确评估一家企业，你必须穿透损益表上的"账面利润"，验证公司是否真正在向银行账户里存入现金。</p>
+      <p>最具韧性的投资标的，往往是那些能够在持续扩张业务的同时，产生充沛现金流的企业。</p>
+      <div class="footer-cta">
+        <p>这是课程中你将接触到的内容之一。<a href="../../cn/index.html#waitlist">提前报名 →</a></p>
+      </div>
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <div class="container">© 2026 FYFA · <a href="../../cn/index.html">fyfa.ca</a></div>
+  </footer>
+</body>
+</html>

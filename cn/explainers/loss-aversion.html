@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>损失厌恶 — FYFA 解析</title>
+  <meta name="description" content="损失厌恶是一种心理现象：亏损带来的痛苦，可以是同等金额盈利所带来的喜悦的两倍。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #FCF8F1; --bg-alt: #F3ECDE; --ink: #1A2332; --ink-muted: #5E5A54;
+      --rule: #E6DDCA; --accent: #B8623A; --accent-soft: #F2D6C3;
+      --card: #FFFFFF; --shadow-sm: 0 1px 3px rgba(26,35,50,0.06), 0 2px 8px rgba(26,35,50,0.04);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; font-size: 17px; -webkit-font-smoothing: antialiased; }
+    h1 { font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: clamp(2.1rem, 4.5vw, 3.1rem); line-height: 1.12; letter-spacing: -0.02em; margin: 0 0 36px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    .site-nav { padding: 18px 0; border-bottom: 1px solid var(--rule); background: rgba(252,248,241,0.85); backdrop-filter: saturate(180%) blur(8px); position: sticky; top: 0; z-index: 50; }
+    .site-nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+    .site-logo { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.15rem; color: var(--ink); }
+    .back-link { font-size: 0.92rem; color: var(--ink-muted); }
+    .back-link:hover { color: var(--accent); }
+    article.explainer { padding: 64px 0 88px; }
+    .eyebrow { font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.78rem; color: var(--accent); font-weight: 600; margin-bottom: 18px; }
+    article.explainer p { font-family: 'Fraunces', Georgia, serif; font-size: 1.18rem; line-height: 1.65; color: var(--ink); margin: 0 0 22px; }
+    article.explainer p:first-of-type { font-size: 1.28rem; line-height: 1.55; }
+    article.explainer p strong { font-weight: 600; color: var(--ink); }
+    .footer-cta { margin-top: 56px; padding: 28px; background: var(--card); border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 12px; box-shadow: var(--shadow-sm); }
+    .footer-cta p { font-family: 'Inter', sans-serif !important; font-size: 0.98rem !important; line-height: 1.55 !important; margin: 0 !important; color: var(--ink-muted); }
+    .footer-cta strong { color: var(--ink); }
+    footer.site-footer { padding: 32px 0; background: var(--bg-alt); border-top: 1px solid var(--rule); font-size: 0.88rem; color: var(--ink-muted); text-align: center; }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a class="site-logo" href="../../cn/index.html">FYFA</a>
+      <a class="back-link" href="../../cn/index.html#materials">← 返回课程材料</a>
+    </div>
+  </nav>
+
+  <article class="explainer">
+    <div class="container">
+      <div class="eyebrow">解析 · 心理偏见</div>
+      <h1>损失厌恶</h1>
+      <p><strong>损失厌恶</strong>是一种心理现象：亏损带来的痛苦，是同等金额盈利所带来的喜悦的两倍。</p>
+      <p>这种偏见是投资路上的重大障碍，因为它扭曲了我们对风险与回报的判断。投资者往往不能基于未来潜力做出客观决策，而是被"实现亏损"的恐惧所麻痹。这常常导致"处置效应"——人们过早卖出盈利的股票以锁定安全感，却死守亏损的仓位迟迟不肯离场，寄望于有朝一日能够回本。</p>
+      <p>互联网泡沫崩溃期间，许多散户投资者的行为是损失厌恶的经典案例。科技股暴跌时，大量投资者拒绝卖出，因为卖出意味着在心理上"承认"了亏损。他们抱着商业模式早已破产的公司不放，只为回避实现亏损带来的情感刺痛——最终眼睁睁看着持仓跌去90%甚至更多。而若能在亏损20%时理性离场，大部分本金本可得以保全。</p>
+      <p>要克服这种本能，你应该将注意力从每日的单只股票波动，转移到整体投资组合的长期表现上。预先制定明确的退出策略——例如止损指令或基于规则的再平衡计划——有助于消除在某笔交易上"认输"的情感包袱。</p>
+      <p>抵御损失厌恶最好的防线，是一套纪律严明、以证据而非情绪为导向的自动化执行流程。</p>
+      <div class="footer-cta">
+        <p>这是课程中你将接触到的内容之一。<a href="../../cn/index.html#waitlist">提前报名 →</a></p>
+      </div>
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <div class="container">© 2026 FYFA · <a href="../../cn/index.html">fyfa.ca</a></div>
+  </footer>
+</body>
+</html>

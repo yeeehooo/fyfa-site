@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>投入资本回报率（ROIC）— FYFA 解析</title>
+  <meta name="description" content="投入资本回报率（ROIC）是一项衡量企业运用资本产生利润的效率的指标。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #FCF8F1; --bg-alt: #F3ECDE; --ink: #1A2332; --ink-muted: #5E5A54;
+      --rule: #E6DDCA; --accent: #B8623A; --accent-soft: #F2D6C3;
+      --card: #FFFFFF; --shadow-sm: 0 1px 3px rgba(26,35,50,0.06), 0 2px 8px rgba(26,35,50,0.04);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; font-size: 17px; -webkit-font-smoothing: antialiased; }
+    h1 { font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: clamp(2.1rem, 4.5vw, 3.1rem); line-height: 1.12; letter-spacing: -0.02em; margin: 0 0 36px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    .site-nav { padding: 18px 0; border-bottom: 1px solid var(--rule); background: rgba(252,248,241,0.85); backdrop-filter: saturate(180%) blur(8px); position: sticky; top: 0; z-index: 50; }
+    .site-nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+    .site-logo { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.15rem; color: var(--ink); }
+    .back-link { font-size: 0.92rem; color: var(--ink-muted); }
+    .back-link:hover { color: var(--accent); }
+    article.explainer { padding: 64px 0 88px; }
+    .eyebrow { font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.78rem; color: var(--accent); font-weight: 600; margin-bottom: 18px; }
+    article.explainer p { font-family: 'Fraunces', Georgia, serif; font-size: 1.18rem; line-height: 1.65; color: var(--ink); margin: 0 0 22px; }
+    article.explainer p:first-of-type { font-size: 1.28rem; line-height: 1.55; }
+    article.explainer p strong { font-weight: 600; color: var(--ink); }
+    .formula {
+      display: flex; align-items: center; justify-content: center; gap: 14px;
+      flex-wrap: wrap; margin: 18px 0 30px; padding: 22px 28px;
+      background: var(--accent-soft); border: 1px solid #EBC6AE; border-radius: 12px;
+      font-family: 'Fraunces', Georgia, serif; font-size: 1.16rem; color: #6B3520; line-height: 1.4;
+    }
+    .formula .formula-label { font-weight: 600; }
+    .formula .formula-eq { font-style: italic; opacity: 0.7; font-size: 1.25rem; }
+    .formula .formula-rhs { display: inline-flex; align-items: center; }
+    .formula .frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; line-height: 1.25; }
+    .formula .frac-num { padding: 0 10px 6px; }
+    .formula .frac-den { padding: 6px 10px 0; border-top: 1.5px solid #B8623A; }
+    .footer-cta { margin-top: 56px; padding: 28px; background: var(--card); border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 12px; box-shadow: var(--shadow-sm); }
+    .footer-cta p { font-family: 'Inter', sans-serif !important; font-size: 0.98rem !important; line-height: 1.55 !important; margin: 0 !important; color: var(--ink-muted); }
+    .footer-cta strong { color: var(--ink); }
+    footer.site-footer { padding: 32px 0; background: var(--bg-alt); border-top: 1px solid var(--rule); font-size: 0.88rem; color: var(--ink-muted); text-align: center; }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a class="site-logo" href="../../cn/index.html">FYFA</a>
+      <a class="back-link" href="../../cn/index.html#materials">← 返回课程材料</a>
+    </div>
+  </nav>
+
+  <article class="explainer">
+    <div class="container">
+      <div class="eyebrow">解析 · 投资概念</div>
+      <h1>投入资本回报率（ROIC）</h1>
+      <p><strong>投入资本回报率（ROIC）</strong>是一项衡量企业运用资本产生利润的效率的指标。</p>
+      <div class="formula">
+        <span class="formula-label">ROIC</span>
+        <span class="formula-eq">=</span>
+        <span class="formula-rhs">
+          <span class="frac">
+            <span class="frac-num">税后净营业利润（NOPAT）</span>
+            <span class="frac-den">投入资本</span>
+          </span>
+        </span>
+      </div>
+      <p>这一指标非常重要，因为它反映了一家企业的真实效率，能够区分靠持续砸钱堆出增长的公司，与真正创造价值的公司。高ROIC通常意味着企业拥有"护城河"，即强大的品牌或专有技术等竞争优势，能够将资本转化为可观的财富。从长远来看，企业产生高于资本成本的回报能力，是股价可持续上涨的首要驱动力。</p>
+      <p>英伟达（Nvidia）在2020年代中期AI基础设施浪潮中的表现，是资本效率的典型现代案例。许多硬件公司需要巨额资本支出来建设工厂，而英伟达的无晶圆厂模式使其得以专注于芯片设计与软件，从而产生巨额利润。截至2026年初的财年，英伟达报告的ROIC高达约<strong>97%</strong>——意味着每投入一美元资本，就能产生近一美元的年度营业利润。这一惊人的资本效率，彰显了其主导市场地位与高毛利产品组合的竞争实力。</p>
+      <p>要真正读懂一家企业，你必须超越简单的盈利增长数字，追问产生这些成果究竟消耗了多少资本。</p>
+      <p>最成功的投资者，优先选择那些能够持续以高回报率再投资利润的企业。</p>
+      <div class="footer-cta">
+        <p>这是课程中你将接触到的内容之一。<a href="../../cn/index.html#waitlist">提前报名 →</a></p>
+      </div>
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <div class="container">© 2026 FYFA · <a href="../../cn/index.html">fyfa.ca</a></div>
+  </footer>
+</body>
+</html>

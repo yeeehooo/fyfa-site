@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>股东回报 — FYFA 解析</title>
+  <meta name="description" content="股东回报是企业分配给股东的全部利润，主要通过现金股息和股票回购两种方式实现，后者能提升剩余股份的价值。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #FCF8F1; --bg-alt: #F3ECDE; --ink: #1A2332; --ink-muted: #5E5A54;
+      --rule: #E6DDCA; --accent: #B8623A; --accent-soft: #F2D6C3;
+      --card: #FFFFFF; --shadow-sm: 0 1px 3px rgba(26,35,50,0.06), 0 2px 8px rgba(26,35,50,0.04);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; font-size: 17px; -webkit-font-smoothing: antialiased; }
+    h1 { font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: clamp(2.1rem, 4.5vw, 3.1rem); line-height: 1.12; letter-spacing: -0.02em; margin: 0 0 36px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    .site-nav { padding: 18px 0; border-bottom: 1px solid var(--rule); background: rgba(252,248,241,0.85); backdrop-filter: saturate(180%) blur(8px); position: sticky; top: 0; z-index: 50; }
+    .site-nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+    .site-logo { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.15rem; color: var(--ink); }
+    .back-link { font-size: 0.92rem; color: var(--ink-muted); }
+    .back-link:hover { color: var(--accent); }
+    article.explainer { padding: 64px 0 88px; }
+    .eyebrow { font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.78rem; color: var(--accent); font-weight: 600; margin-bottom: 18px; }
+    article.explainer p { font-family: 'Fraunces', Georgia, serif; font-size: 1.18rem; line-height: 1.65; color: var(--ink); margin: 0 0 22px; }
+    article.explainer p:first-of-type { font-size: 1.28rem; line-height: 1.55; }
+    article.explainer p strong { font-weight: 600; color: var(--ink); }
+    .formula {
+      display: flex; align-items: center; justify-content: center; gap: 14px;
+      flex-wrap: wrap; margin: 18px 0 30px; padding: 22px 28px;
+      background: var(--accent-soft); border: 1px solid #EBC6AE; border-radius: 12px;
+      font-family: 'Fraunces', Georgia, serif; font-size: 1.16rem; color: #6B3520; line-height: 1.4;
+    }
+    .formula .formula-label { font-weight: 600; }
+    .formula .formula-eq { font-style: italic; opacity: 0.7; font-size: 1.25rem; }
+    .formula .formula-rhs { display: inline-flex; align-items: center; }
+    .formula .frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; line-height: 1.25; }
+    .formula .frac-num { padding: 0 10px 6px; }
+    .formula .frac-den { padding: 6px 10px 0; border-top: 1.5px solid #B8623A; }
+    .footer-cta { margin-top: 56px; padding: 28px; background: var(--card); border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 12px; box-shadow: var(--shadow-sm); }
+    .footer-cta p { font-family: 'Inter', sans-serif !important; font-size: 0.98rem !important; line-height: 1.55 !important; margin: 0 !important; color: var(--ink-muted); }
+    .footer-cta strong { color: var(--ink); }
+    footer.site-footer { padding: 32px 0; background: var(--bg-alt); border-top: 1px solid var(--rule); font-size: 0.88rem; color: var(--ink-muted); text-align: center; }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a class="site-logo" href="../../cn/index.html">FYFA</a>
+      <a class="back-link" href="../../cn/index.html#materials">← 返回课程材料</a>
+    </div>
+  </nav>
+
+  <article class="explainer">
+    <div class="container">
+      <div class="eyebrow">解析 · 投资概念</div>
+      <h1>股东回报</h1>
+      <p><strong>股东回报</strong>是企业分配给股东的全部利润，主要通过现金股息和股票回购两种方式实现，后者能提升剩余股份的价值。</p>
+      <div class="formula">
+        <span class="formula-label">股东收益率</span>
+        <span class="formula-eq">=</span>
+        <span class="formula-rhs">
+          <span class="frac">
+            <span class="frac-num">现金股息 + 股票净回购</span>
+            <span class="frac-den">市值</span>
+          </span>
+        </span>
+      </div>
+      <p>这一概念的重要性在于，它揭示了管理层在付清账单、维持业务运转之后，如何处置"多余"的现金。高增长企业会将每一分钱再投入业务，而成熟、高效的企业则通过回购减少流通股数——让你持有的每股代表公司更大的权益占比——同时通过股息提供即时收益。忽视这一点的后果，往往是"越分散越差"（diworsification）——管理层将现金挥霍在糟糕的收购上，而非归还给股东。</p>
+      <p>苹果（Apple）在蒂姆·库克（Tim Cook）领导下的做法，是近年来最有力的案例。尽管贵为全球最大企业之一，苹果意识到自己产生的现金已远超新产品研发所需，于是启动了大规模资本回报计划。到2024年和2025年，苹果每年通过回购和股息向股东返还逾<strong>900亿美元</strong>，十年间有效压缩了近<strong>40%</strong>的流通股数，即便在营收增速放缓的时期，也为长期持有者带来了丰厚回报。</p>
+      <p>评判一个管理团队的质量，你必须考察他们是否在尽职尽责地管理你的资本，还是在囤积本属于你的现金。</p>
+      <p>最友好的投资标的，是那些将股东视为合伙人、认为股东理应分享实际现金利润的企业。</p>
+      <div class="footer-cta">
+        <p>这是课程中你将接触到的内容之一。<a href="../../cn/index.html#waitlist">提前报名 →</a></p>
+      </div>
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <div class="container">© 2026 FYFA · <a href="../../cn/index.html">fyfa.ca</a></div>
+  </footer>
+</body>
+</html>

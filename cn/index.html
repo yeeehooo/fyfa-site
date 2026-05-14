@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FYFA — Fire Your Financial Advisors</title>
-  <meta name="description" content="An AI-assisted investing course for people who'd rather pay themselves than their advisors. Taught by a CFA who spent years watching the industry from the inside." />
+  <title>FYFA — 告别碳基理财顾问</title>
+  <meta name="description" content="AI时代全新投资课程，专为非金融专业人士设计，讲授如何善用AI工具，告别碳基理财顾问。由一位经验丰富的特许金融分析师(CFA)主讲。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -61,6 +61,9 @@
     .nav-links a:hover { color: var(--accent); text-decoration: none; }
     .nav-cta { background: var(--ink); color: var(--bg); padding: 9px 18px; border-radius: 999px; font-size: 0.9rem; font-weight: 500; }
     .nav-cta:hover { background: var(--accent); color: var(--bg); text-decoration: none; }
+    .nav-lang { font-size: 0.88rem; font-weight: 500; color: var(--ink-muted); }
+    .nav-lang a { color: var(--ink-muted); }
+    .nav-lang a:hover { color: var(--accent); text-decoration: none; }
     @media (max-width: 720px) { .nav-links { display: none; } .nav-cta { display: inline-block; } }
 
     /* Wordmark */
@@ -82,7 +85,7 @@
     .hero-art img { display: block; width: 100%; height: auto; }
     .hero-art .placeholder { text-align: center; padding: 24px; color: var(--ink-muted); font-size: 0.85rem; font-style: italic; }
 
-    /* Hero roles band — sits immediately below the hero */
+    /* Hero roles band */
     .hero-roles-band { padding: 56px 0 88px; border-bottom: 1px solid var(--rule); }
     .hero-roles-intro { text-align: center; max-width: 620px; margin: 0 auto 36px; }
     .hero-roles-intro h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.6rem; color: var(--ink); letter-spacing: -0.01em; }
@@ -149,7 +152,7 @@
     .role-tagline { text-align: center; margin-top: 40px; font-family: 'Fraunces', serif; font-size: 1.25rem; color: var(--ink-muted); letter-spacing: 0.01em; }
     .role-tagline strong { color: var(--accent); font-weight: 600; font-style: italic; }
 
-    /* Storm divider (between Why and Levels) */
+    /* Storm divider */
     .storm-divider { padding: 72px 0; border-bottom: 1px solid var(--rule); }
     .storm-wrap { display: grid; grid-template-columns: 420px 1fr; gap: 56px; align-items: center; }
     .storm-illustration { border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-md); aspect-ratio: 3/2; }
@@ -162,7 +165,7 @@
       .storm-illustration { max-width: 480px; margin: 0 auto; }
     }
 
-    /* Barometer intro (2-col with illustration) */
+    /* Barometer intro */
     .barometer-intro { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; margin-bottom: 56px; }
     .barometer-illustration { border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-md); }
     .barometer-illustration img { display: block; width: 100%; height: auto; }
@@ -170,7 +173,7 @@
     .barometer-intro-copy p { color: var(--ink-muted); max-width: 56ch; font-size: 1.18rem; line-height: 1.6; }
     @media (max-width: 820px) { .barometer-intro { grid-template-columns: 1fr; } }
 
-    /* Journey band (closing, before Waitlist) */
+    /* Journey band */
     .journey-band { padding: 88px 0; border-bottom: 1px solid var(--rule); }
     .journey-wrap { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
     .journey-illustration { border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-md); }
@@ -179,7 +182,7 @@
     .journey-copy p { color: var(--ink-muted); margin-bottom: 28px; max-width: 44ch; font-size: 1.1rem; }
     @media (max-width: 820px) { .journey-wrap { grid-template-columns: 1fr; } }
 
-    /* Course levels — grouped lesson cards */
+    /* Course levels */
     .levels-intro { color: var(--ink-muted); font-size: 1.08rem; max-width: 56ch; margin-top: 14px; }
     .level-group { margin-top: 48px; }
     .level-group + .level-group { margin-top: 56px; }
@@ -207,7 +210,7 @@
     .levels-note li::marker { color: var(--accent); font-weight: 700; }
     .levels-note strong { font-weight: 600; color: var(--ink); }
 
-    /* Pricing / quiz */
+    /* Pricing */
     .pricing-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px; margin-top: 32px; align-items: stretch; }
     .pricing-card { background: var(--card); border-radius: 16px; padding: 32px; border: 1px solid var(--rule); box-shadow: var(--shadow-sm); }
     .pricing-card h3 { margin-bottom: 20px; }
@@ -325,258 +328,256 @@
 <body>
   <nav class="nav">
     <div class="container nav-inner">
-      <a href="#" class="wordmark" aria-label="FYFA home">
+      <a href="#" class="wordmark" aria-label="FYFA 首页">
         <span>FYFA<span class="dot">.</span></span>
       </a>
       <div class="nav-links">
-       <a href="#about">About</a>
-       <a href="#why">Why</a>
-       <a href="#levels">Course</a>
-       <a href="#barometer">Barometer</a>
-       <a href="#articles">Analysis</a>
+        <a href="#about">讲师介绍</a>
+        <a href="#why">开课初衷</a>
+        <a href="#levels">课程结构</a>
+        <a href="#barometer">市场温度计</a>
+        <a href="#articles">近期作品</a>
       </div>
       <div style="display:flex; align-items:center; gap:16px;">
-       <span style="font-size:0.88rem; font-weight:500; color:var(--ink-muted);">EN | <a href="cn/index.html" style="color:var(--ink-muted);">中文</a></span>
-       <a href="#waitlist" class="nav-cta">Join waitlist</a>
+        <span class="nav-lang"><a href="../index.html">EN</a> | 中文</span>
+        <a href="#waitlist" class="nav-cta">我有兴趣</a>
       </div>
-    </div> 
+    </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- 英雄区 -->
   <section class="hero">
     <div class="container hero-wrap">
       <div>
-        <div class="eyebrow">AI-assisted investing course</div>
-        <h1>Everyone can be a smart investor — <strong>with basic financial knowledge and a hand from AI.</strong></h1>
-        <p class="lead">The future has arrived. It's time for <strong style="color:var(--ink);">FYFA</strong> <span style="color:var(--ink-muted); font-style:italic;">(fire your financial advisors)</span>.</p>
-        <a href="#waitlist" class="btn btn-primary">Take control of your money</a>
-        <a href="#why" class="btn btn-ghost">Why this course</a>
+        <div class="eyebrow">AI时代全新投资课程</div>
+        <h1>人人都能成为聪明的投资者——<strong>只要学习金融常识和善用AI。</strong></h1>
+        <p class="lead">未来已来，告别碳基理财顾问的时候到了。<strong style="color:var(--ink);">FYFA = Fire Your Financial Advisors </strong> <span style="color:var(--ink-muted); font-style:italic;"></p>
+        <a href="#waitlist" class="btn btn-primary">提前报名</a>
+        <a href="#why" class="btn btn-ghost">开课初衷</a>
       </div>
       <div class="hero-art">
-        <img src="images/hero-illustration.png" alt="A traveler walking past stones marked High Fees, Conflicts of Interest, Complexity and Excessive Costs, into a warm sunset over the Mediterranean coast." />
       </div>
     </div>
   </section>
 
-  <!-- HERO ROLES BAND -->
+  <!-- AI四大角色 -->
   <section class="hero-roles-band">
     <div class="container">
       <div class="hero-roles-intro">
-        <h3>Put AI to work in <strong>four roles</strong> built for the long-term investor.</h3>
+        <h3>让AI发挥<strong>四大功能</strong></h3>
       </div>
       <div class="hero-roles-grid">
         <div class="role-card">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
           <div>
-            <h4>AI Advisor</h4>
-            <p>Get clear, objective guidance for better decisions.</p>
+            <h4>硅基顾问</h4>
+            <p>提供清晰客观的指引，提供决策依据。</p>
           </div>
         </div>
         <div class="role-card">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9-6-18-3 9H2"/></svg>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
           <div>
-            <h4>Mood Stabilizer</h4>
-            <p>Stay calm, focused, and in control — in any market.</p>
+            <h4>情绪稳定器</h4>
+            <p>无论市场如何波动，帮人类保持冷静和专注。</p>
           </div>
         </div>
         <div class="role-card">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14L16 6"/><circle cx="12" cy="14" r="2"/><path d="M3 14a9 9 0 0 1 18 0"/><path d="M3 14h2"/><path d="M19 14h2"/></svg>
           <div>
-            <h4>Market Barometer</h4>
-            <p>Understand what the market is really telling you.</p>
+            <h4>市场温度计</h4>
+            <p>读取重要信号，测量热度，判断市场周期。</p>
           </div>
         </div>
         <div class="role-card">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="12" r="2"/><circle cx="19" cy="12" r="2"/><circle cx="12" cy="19" r="2"/><path d="M12 7v4M7 12h10M12 13v4"/></svg>
           <div>
-            <h4>Automatic Analyst</h4>
-            <p>Deep research and smarter insights, on autopilot.</p>
+            <h4>智能分析师</h4>
+            <p>自动收集数据并提供深度研究与分析。</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
+  <!-- 关于讲师 -->
   <section id="about">
     <div class="container about-grid">
       <div class="about-portrait">
-        <img src="images/headshot older.png" alt="Portrait of Yee" />
+        <img src="../images/headshot older.png" alt="Yee 的照片" />
       </div>
       <div>
-        <div class="eyebrow">About your instructor</div>
-        <h2>Yee has watched the industry from the inside.</h2>
-        <p style="margin-top:20px; font-size:1.08rem;">The founder of fyfa.ca is a veteran investment writer and Chartered Financial Analyst living in Canada. He writes regularly for Seeking Alpha with a focus on quality businesses with wide moats, high efficiency, and strong cash flows.</p>
-        <p style="margin-top:16px; font-size:1.08rem;">A key purpose of his writing is to invite opposing views — which, he's found, are often essential to refining investment ideas. Yee previously worked for Fidelity International and Bloomberg in Singapore and Hong Kong.</p>
+        <div class="eyebrow">讲师介绍</div>
+        <h2>行业内部的观察者。</h2>
+        <p style="margin-top:20px; font-size:1.08rem;">FYFA网站创始人Yee是一位资深投研作者和特许金融分析师（CFA），长期为Seeking Alpha等平台撰稿，专注于发掘和跟踪优质企业，重视护城河、运营效率和自由现金流等价值指标。</p>
+        <p style="margin-top:16px; font-size:1.08rem;">其写作核心目的是理清思路并寻求与反面观点的碰撞，以求不断靠近真相。曾在新加坡和香港的富达国际（Fidelity International）及彭博（Bloomberg）任职。</p>
       </div>
     </div>
   </section>
 
-  <!-- WHY -->
+  <!-- 为什么 -->
   <section id="why" class="alt-bg">
     <div class="container">
-      <div class="eyebrow">Why this course</div>
-      <h2 class="why-quote-h2" style="max-width: 22ch; margin-bottom: 40px;"><span class="qmark">&ldquo;</span>As a financial analyst, why am I taking on my own profession?<span class="qmark">&rdquo;</span></h2>
-      <div class="instructor-divider"><span>Instructor's Message</span></div>
+      <div class="eyebrow">为什么开这门课</div>
+      <h2 class="why-quote-h2" style="max-width: 22ch; margin-bottom: 40px;"><span class="qmark">&ldquo;</span>作为金融分析师，我为何要向自己的行业开炮？<span class="qmark">&rdquo;</span></h2>
+      <div class="instructor-divider"><span>讲师寄语</span></div>
       <div class="why-wrap why">
         <blockquote class="instructor-quote">
-          <p>It took me years to figure out that the trade of investment advisory is a wealth detractor for most people. The industry on the whole is structurally flawed — misaligned interests between advisor and client, needless (and often toxic) complexity, excessive fees, and style over substance.</p>
-          <p>If a building is rotten at the foundation, the best thing to do is take it down.</p>
-          <p>That said, advisors aren't entirely without merit. Retail investors — especially those with little financial training — can be vulnerable to pitfalls and psychological biases. A high-caliber advisor may help them avoid disastrous outcomes.</p>
-          <p>But the blossoming of AI has rendered that risk-management role obsolete. AI has no fear, no greed, no ego. It follows pre-set rules. It can offer sound counsel in despair or in euphoria, and help steady your pace of investing regardless of market conditions. Assign clear roles to your AI agents, and they'll work like the best human advisors — for peanuts.</p>
+          <p>我花了多年时间才想明白，专业理财服务对大多数人来说恰恰是一台毁灭财富的机器。这个行业在结构上存在缺陷，问题包括利益冲突、高昂收费、复杂而有害的产品、华而不实的包装，等等。</p>
+          <p>如果一座大楼的地基已经烂掉，最好的办法就是把它推倒重建。</p>
+          <p>话说回来，理财顾问们并非一无是处。投资之路往往曲折坎坷，缺乏金融知识的散户很容易掉进各类陷阱，也受制于人性弱点。一些优秀的顾问能帮他们降低风险，避开灾难性的后果。</p>
+          <p>但AI的崛起，已经让碳基顾问的风险管理角色变得无足轻重。AI没有恐惧，没有贪婪，没有自恋和自大。它遵守预设规则。无论市场冷热，它都能给出理性建议，帮助投资者保持稳定的节奏。有了清晰的规则和恰当的指令，AI的表现将不亚于人类顾问中的佼佼者，而成本极为低廉。</p>
         </blockquote>
         <div class="why-illustration">
-          <img src="images/why-cottage.png" alt="A weathered Mediterranean stone cottage with four hand-painted wooden signs nailed to its front: Misaligned Interests, Excessive Fees, Toxic Complexity, Style Over Substance." />
+          <img src="../images/why-cottage.png" alt="一座古朴的地中海石屋，门前钉着四块手绘木牌：利益错位、过度收费、有毒的复杂性、华而不实。" />
         </div>
       </div>
 
-      <!-- Pullquotes row -->
+      <!-- 名言引用 -->
       <div class="pullquote-row">
         <blockquote class="pullquote">
-          <img class="quote-avatar" src="images/Buffett image.png" alt="Warren Buffett illustration" onerror="this.style.display='none';" />
+          <img class="quote-avatar" src="../images/Buffett image.png" alt="沃伦·巴菲特插图" onerror="this.style.display='none';" />
           <div class="quote-body">
-            <p class="quote-line">"Don't ask the barber whether you need a haircut."</p>
-            <p class="quote-line">"Both large and small investors should stick with low-cost index funds."</p>
-            <footer>— Warren Buffett</footer>
+            <p class="quote-line">"别问理发师你是否需要理发。"</p>
+            <p class="quote-line">"无论机构还是散户，都应该投资低成本指数基金。"</p>
+            <footer>— 沃伦·巴菲特</footer>
           </div>
         </blockquote>
         <blockquote class="pullquote">
-          <img class="quote-avatar" src="images/Munger image.png" alt="Charlie Munger illustration" onerror="this.style.display='none';" />
+          <img class="quote-avatar" src="../images/Munger image.png" alt="查理·芒格插图" onerror="this.style.display='none';" />
           <div class="quote-body">
-            <p class="quote-line">"The investment world is full of people who are paid to provide complexity. Complexity is a way for the professionals to justify their fees."</p>
-            <footer>— Charlie Munger</footer>
+            <p class="quote-line">"投资界充满了靠复杂性吃饭的人。专业人士用复杂性来证明自己的高收费很合理。"</p>
+            <footer>— 查理·芒格</footer>
           </div>
         </blockquote>
+
+
       </div>
     </div>
   </section>
 
-  <!-- STORM DIVIDER (Mood Stabilizer beat) -->
+  <!-- 情绪稳定器分隔区 -->
   <section class="storm-divider">
     <div class="container storm-wrap">
       <div class="storm-illustration">
-        <img src="images/storm.png" alt="A small wooden sailboat with a single sail on a stormy Mediterranean sea, with a warm-lit harbour village visible on the distant shore beneath breaking sunlight." />
       </div>
       <div class="storm-copy">
-        <div class="eyebrow">Mood stabilizer</div>
-        <p class="storm-quote">Markets get choppy. The harbour stays visible — if you don't lose your nerve.</p>
-        <p class="storm-explainer">AI doesn't panic. It doesn't get euphoric. It follows the plan when your nerves don't — through every cycle.</p>
-        <p class="storm-explainer">The biggest investment mistakes are emotional. AI has no emotions to manage.</p>
+        <div class="eyebrow">情绪稳定器</div>
+        <p class="storm-quote">市场时而风高浪急。只要保持冷静，港湾始终清晰可见。</p>
+        <p class="storm-explainer">AI不会恐慌，也不会亢奋，只会按计划执行任务，穿越周期。</p>
+        <p class="storm-explainer">投资中最大的错误往往源于情绪，而AI没有喜怒哀乐。</p>
       </div>
     </div>
   </section>
 
-  <!-- LEVELS -->
+  <!-- 课程内容 -->
   <section id="levels">
     <div class="container">
-      <div class="eyebrow">What you'll learn</div>
-      <h2 style="max-width: 22ch;">Two levels. Six lessons.</h2>
-      <p class="levels-intro">Start at the floor everyone shares. Step up when you're ready to go further.</p>
+      <div class="eyebrow">学习内容</div>
+      <h2 style="max-width: 22ch;">两个级别，各三节课。</h2>
+      <p class="levels-intro">可根据自己能力和需求选择合适的级别。</p>
 
-      <!-- Level A -->
+      <!-- A 级 -->
       <div class="level-group level-a">
         <div class="level-group-header">
           <div class="level-tag">A</div>
           <div>
-            <div class="hook">Level A · Foundations</div>
-            <h3>For everybody</h3>
-            <p class="audience">No financial background required.</p>
+            <div class="hook">A级 · 基础入门</div>
+            <h3>适合所有人</h3>
+            <p class="audience">无需金融背景。</p>
           </div>
         </div>
         <div class="lessons-grid">
           <div class="lesson-card">
             <div class="lesson-num">1</div>
-            <h4>Index funds</h4>
-            <p>Why low-cost index funds are the floor. How to use them, how to allocate between equity and bonds, and why most human asset managers underperform.</p>
+            <h4>指数基金</h4>
+            <p>为什么低成本指数基金是投资的基石，为何大多数机构长期跑输指数，如何选择指数基金，以及如何在股票与债券之间平衡配置。</p>
           </div>
           <div class="lesson-card">
             <div class="lesson-num">2</div>
-            <h4>Behavioral finance</h4>
-            <p>Understanding human weaknesses in investment decision-making — and how to use AI as a mood stabilizer and counsellor when nerves take over.</p>
+            <h4>行为金融学</h4>
+            <p>了解人类在投资决策中的各种弱点，以及如何在情绪剧烈波动时，让AI充当稳定器和心理顾问。</p>
           </div>
           <div class="lesson-card">
             <div class="lesson-num">3</div>
-            <h4>AI as market barometer</h4>
-            <p>How to read market conditions with AI, and how to communicate your risk profile and financial needs so the answers fit your life.</p>
+            <h4>市场温度计</h4>
+            <p>如何借助AI测量热度，了解市场周期，以及如何让AI理解你的风险偏好与财务需求，给出合理建议。</p>
           </div>
         </div>
       </div>
 
-      <!-- Level B -->
+      <!-- B 级 -->
       <div class="level-group level-b">
         <div class="level-group-header">
           <div class="level-tag">B</div>
           <div>
-            <div class="hook">Level B · Going deeper</div>
-            <h3>For intermediate investors</h3>
-            <p class="audience">Basic-to-intermediate financial knowledge recommended.</p>
+            <div class="hook">B级 · 进阶选项</div>
+            <h3>适合中级投资者</h3>
+            <p class="audience">需要基础金融知识。</p>
           </div>
         </div>
         <div class="lessons-grid">
           <div class="lesson-card">
             <div class="lesson-num">1</div>
-            <h4>Prompt is gold</h4>
-            <p>Improving input quality, using reliable data sources, setting clear rules, and spot-checking what AI gives back.</p>
+            <h4>提示词，金钥匙</h4>
+            <p>提升输入质量，使用可靠数据源，设定清晰规则，以及核查AI给出的答案。</p>
           </div>
           <div class="lesson-card">
             <div class="lesson-num">2</div>
-            <h4>Value investing in the AI era</h4>
-            <p>Data collection and crunching for the value metrics that actually matter — and how to reduce hallucination so your numbers stay clean.</p>
+            <h4>AI时代的价投</h4>
+            <p>如何让AI收集与分析核心价值数据，以及如何减少幻觉，使答案干净准确。</p>
           </div>
           <div class="lesson-card">
             <div class="lesson-num">3</div>
-            <h4>AI agents at work</h4>
-            <p>How to set up AI agents working in different roles of an investment team — research, risk, valuation, oversight.</p>
+            <h4>用好AI代理</h4>
+            <p>如何在虚拟团队的不同岗位上部署AI代理——研究、估值、风控等等。</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PRICING & QUIZ -->
+  <!-- 定价与说明 -->
   <section class="alt-bg">
     <div class="container">
-      <div class="eyebrow">Pricing &amp; schedule</div>
-      <h2>The cost of a good dinner for potentially life-changing knowledge & skills.</h2>
+      <div class="eyebrow">价格与优惠</div>
+      <h2>用一顿晚餐的成本，获取可能改变人生的知识。</h2>
       <div class="pricing-grid">
         <div class="pricing-card">
-          <h3>What you pay</h3>
-          <div class="price-big">C$58 <small>/ lesson</small> <small style="color:var(--ink-muted); font-weight:400;">or C$138 / level</small></div>
+          <h3>费用</h3>
+          <div class="price-big">单节课58加元<small></small> <small style="color:var(--ink-muted); font-weight:400;">或一个级别138加元</small></div>
           <div style="margin-top:20px;">
-            <div class="price-row"><span class="label">Course structure</span><span class="value">2 levels × 3 lessons</span></div>
-            <div class="price-row"><span class="label">Lesson length</span><span class="value">1 hour</span></div>
-            <div class="price-row"><span class="label">Refer a friend</span><span class="value">C$15 credit for each of you</span></div>
+            <div class="price-row"><span class="label">课程结构</span><span class="value">两个级别 × 三节课</span></div>
+            <div class="price-row"><span class="label">每节课时长</span><span class="value">一小时</span></div>
+            <div class="price-row"><span class="label">推荐好友</span><span class="value">双方各有15加元优惠</span></div>
           </div>
         </div>
         <div class="levels-note">
-          <h3>Important Notes</h3>
+          <h3>重要说明</h3>
           <ol>
-            <li>We focus on basic financial knowledge and investment methodology. There will be <strong>no recommendations on individual stocks</strong>.</li>
-            <li>Level A is by no means less useful than Level B. Investing, as Buffett has pointed out, is a rare sport where amateurs can beat pros — if they know their limits and stay cool. We share the data in the course that proves it.</li>
+            <li>本课程聚焦于基础金融知识与投资方法论，不分析也不推荐任何个股</strong>。</li>
+            <li>A级难度虽低于B级，但效用不见得低于B级，关键是选择适合自己的方法。正如巴菲特所说，投资是少数几个业余队有可能打败专业队的领域，在课程中我们也会用数据证明这一点。</li>
           </ol>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BAROMETER -->
+  <!-- 市场温度计 -->
   <section id="barometer">
     <div class="container">
       <div class="barometer-intro">
         <div class="barometer-intro-copy">
-          <div class="eyebrow">Market sentiment barometer</div>
-          <h2>A weekly temperature check on where we are in the cycle.</h2>
-          <p>A single 0–100 score built from five long-running indicators, with a Google Trends panic override. 0–20 means fear / cold conditions. 20–80 is normal. 80–100 means greed / hot. Below: placeholder sub-scores — live data wires in when the weekly job is deployed.</p>
+          <div class="eyebrow">市场情绪温度计</div>
+          <h2>每周更新的市场热度和周期测量。</h2>
+          <p>由五项核心指标构成的综合评分，再加上谷歌搜索趋势作为X变量。0–20代表恐惧/寒冷状态，20–80为正常区间，80–100代表贪婪/过热状态。以下为分项数据，有的按周更新，有的按月更新。</p>
         </div>
         <div class="barometer-illustration">
-          <img src="images/barometer.png" alt="An antique brass-and-wood barometer hanging on a sun-warmed plaster wall, with a leather notebook, ceramic cup, and olive sprig on the ledge below; the Mediterranean coast visible through an arched window beside it." />
         </div>
       </div>
 
       <div class="barometer-wrap">
         <div class="gauge">
-          <!-- Semicircle SVG gauge -->
-          <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" aria-label="Sentiment gauge">
+          <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" aria-label="情绪仪表盘">
             <defs>
               <linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stop-color="#4A8FA8" />
@@ -586,254 +587,268 @@
                 <stop offset="100%" stop-color="#BB4F44" />
               </linearGradient>
             </defs>
-            <!-- Track -->
             <path d="M 40 200 A 160 160 0 0 1 360 200" fill="none" stroke="#E6DDCA" stroke-width="28" stroke-linecap="round" />
-            <!-- Filled arc to current value (placeholder 62) -->
-            <!-- arc length: 0-100 maps to 0-180deg, so 62 -> 111.6deg of the 180 -->
             <path id="gauge-arc" d="M 40 200 A 160 160 0 0 1 360 200" fill="none" stroke="url(#gaugeGradient)" stroke-width="28" stroke-linecap="round"
                   stroke-dasharray="502.65" stroke-dashoffset="191"/>
-            <!-- Tick marks -->
             <g stroke="#5E5A54" stroke-width="1.5" opacity="0.6">
               <line x1="40" y1="200" x2="40" y2="188" />
               <line x1="200" y1="40" x2="200" y2="52" />
               <line x1="360" y1="200" x2="360" y2="188" />
             </g>
-            <!-- Needle (points to 62) -->
             <g id="needle" transform="rotate(22 200 200)">
               <line x1="200" y1="200" x2="200" y2="60" stroke="#1A2332" stroke-width="3" stroke-linecap="round" />
               <circle cx="200" cy="200" r="10" fill="#1A2332" />
               <circle cx="200" cy="200" r="4" fill="#FCF8F1" />
             </g>
-            <!-- Band labels -->
             <text x="40" y="225" fill="#5E5A54" font-family="Inter" font-size="11" text-anchor="middle">0</text>
             <text x="200" y="30" fill="#5E5A54" font-family="Inter" font-size="11" text-anchor="middle">50</text>
             <text x="360" y="225" fill="#5E5A54" font-family="Inter" font-size="11" text-anchor="middle">100</text>
           </svg>
-          <div class="gauge-label"><span data-bm="score">62</span><small data-bm="band">Leaning greed · normal-hot band</small></div>
-          <div class="gauge-legend"><span>Fear · 0–20</span><span>Normal · 20–80</span><span>Greed · 80–100</span></div>
+          <div class="gauge-label"><span data-bm="score">62</span><small data-bm="band">偏贪婪 · 正常偏热区间</small></div>
+          <div class="gauge-legend"><span>恐惧 · 0–20</span><span>正常 · 20–80</span><span>贪婪 · 80–100</span></div>
         </div>
         <div class="subscores">
           <div class="subscore" data-bm-key="shiller_pe">
-            <div><div class="name">Shiller PE<span class="raw" data-bm-raw></span></div><span class="weight">Weight 25% · 20y rolling z-score</span></div>
+            <div><div class="name">席勒市盈率<span class="raw" data-bm-raw></span></div><span class="weight">权重 25% · 20 年滚动 z 分数</span></div>
             <div class="bar"><div class="bar-fill" style="width: 72%;"></div></div>
             <div class="sub-val">72</div>
           </div>
           <div class="subscore" data-bm-key="buffett">
-            <div><div class="name">Buffett Indicator<span class="raw" data-bm-raw></span></div><span class="weight">Weight 25% · 20y rolling z-score</span></div>
+            <div><div class="name">巴菲特指标<span class="raw" data-bm-raw></span></div><span class="weight">权重 25% · 20 年滚动 z 分数</span></div>
             <div class="bar"><div class="bar-fill" style="width: 68%;"></div></div>
             <div class="sub-val">68</div>
           </div>
           <div class="subscore" data-bm-key="margin_debt">
-            <div><div class="name">FINRA margin debt / GDP<span class="raw" data-bm-raw></span></div><span class="weight">Weight 20% · 10y rolling z-score</span></div>
+            <div><div class="name">FINRA融资余额/GDP<span class="raw" data-bm-raw></span></div><span class="weight">权重 20% · 10 年滚动 z 分数</span></div>
             <div class="bar"><div class="bar-fill" style="width: 58%;"></div></div>
             <div class="sub-val">58</div>
           </div>
           <div class="subscore" data-bm-key="aaii_cash">
-            <div><div class="name">AAII retail cash (inverted)<span class="raw" data-bm-raw></span></div><span class="weight">Weight 20% · 10y rolling z-score</span></div>
+            <div><div class="name">AAII散户现金比例<span class="raw" data-bm-raw></span></div><span class="weight">权重 20% · 10 年滚动 z 分数</span></div>
             <div class="bar"><div class="bar-fill" style="width: 71%;"></div></div>
             <div class="sub-val">71</div>
           </div>
           <div class="subscore" data-bm-key="fear_greed">
-            <div><div class="name">CNN Fear &amp; Greed Index<span class="raw" data-bm-raw></span></div><span class="weight">Weight 10% · used directly</span></div>
+            <div><div class="name">CNN恐惧与贪婪指数<span class="raw" data-bm-raw></span></div><span class="weight">权重 10% · 直接采用</span></div>
             <div class="bar"><div class="bar-fill" style="width: 54%;"></div></div>
             <div class="sub-val">54</div>
           </div>
           <div class="subscore" data-bm-key="google_trends" style="opacity:0.75;">
-            <div><div class="name">Google Trends "stock market" (X factor)<span class="raw" data-bm-raw></span></div><span class="weight" data-bm-gt-weight>Active when ≥ 80 · currently 42</span></div>
+            <div><div class="name">谷歌“股市”搜索趋势（X因子）<span class="raw" data-bm-raw></span></div><span class="weight" data-bm-gt-weight>≥80 时触发 · 当前值 42</span></div>
             <div class="bar"><div class="bar-fill" style="width: 42%;"></div></div>
             <div class="sub-val">42</div>
           </div>
         </div>
       </div>
-      <p class="barometer-footnote">Last updated: <span data-bm="updated">pending deploy</span>.</p>
+      <p class="barometer-footnote">最后更新：<span data-bm="updated">2026年5月</span>。方法论：<a href="#">查看说明</a>。</p>
     </div>
   </section>
 
-  <!-- ARTICLES -->
+  <!-- 投资文章 -->
   <section id="articles" class="alt-bg">
     <div class="container">
-      <div class="eyebrow">Investment writing</div>
-      <h2 style="max-width: 20ch;">Yee's published analysis</h2>
-      <p style="max-width: 60ch; margin-top: 14px; margin-bottom: 40px; color: var(--ink-muted);">The articles below are NOT intended to recommend any stocks. They are presented here just to give a sense of the instructor's investment philosophy and writing style.</p>
+      <div class="eyebrow">投资研究</div>
+      <h2 style="max-width: 20ch;">近期研报摘选</h2>
+      <p style="max-width: 60ch; margin-top: 14px; margin-bottom: 40px; color: var(--ink-muted);">以下文章仅供参考，并非用于推荐任何股票，旨在展示讲师的投资理念与写作风格。</p>
 
       <div class="articles-grid" id="articles-grid">
-        <!-- SA articles (placeholder returns, real links) -->
         <article class="article-card">
           <div class="article-body">
-            <div class="article-meta"><span class="ticker">WPLCF</span><span>Feb 27, 2025 · Seeking Alpha</span></div>
-            <div class="article-title"><a href="https://seekingalpha.com/article/4762695-wise-moat-widens-as-global-network-supports-cost-leadership" target="_blank" rel="noopener">Wise: Moat Widens as Global Network Supports Cost Leadership</a></div>
-            <div class="article-summary">Summary pulled from article page by the weekly job.</div>
+            <div class="article-meta"><span class="ticker">WPLCF</span><span>2025年2月27日 · Seeking Alpha</span></div>
+            <div class="article-title"><a href="https://seekingalpha.com/article/4762695-wise-moat-widens-as-global-network-supports-cost-leadership" target="_blank" rel="noopener">Wise：全球网络支撑成本领先，护城河持续拓宽</a></div>
+            <div class="article-summary">摘要由每周任务从文章页面抓取。</div>
             <div class="perf-row">
-              <div class="cell"><div class="label">Return since pub.</div><div class="val pos">+24.8%</div></div>
+              <div class="cell"><div class="label">发布后回报</div><div class="val pos">+24.8%</div></div>
               <div class="cell"><div class="label">SPY</div><div class="val pos">+9.6%</div></div>
             </div>
           </div>
         </article>
         <article class="article-card">
           <div class="article-body">
-            <div class="article-meta"><span class="ticker">PROSY</span><span>Apr 25, 2025 · Seeking Alpha</span></div>
-            <div class="article-title"><a href="https://seekingalpha.com/article/4778047-prosus-best-proxy-to-internet-giant-tencent" target="_blank" rel="noopener">Prosus: Best Proxy to Internet Giant Tencent</a></div>
-            <div class="article-summary">Summary pulled from article page by the weekly job.</div>
+            <div class="article-meta"><span class="ticker">PROSY</span><span>2025年4月25日 · Seeking Alpha</span></div>
+            <div class="article-title"><a href="https://seekingalpha.com/article/4778047-prosus-best-proxy-to-internet-giant-tencent" target="_blank" rel="noopener">Prosus：投资互联网巨头腾讯的最佳替代标的</a></div>
+            <div class="article-summary">摘要由每周任务从文章页面抓取。</div>
             <div class="perf-row">
-              <div class="cell"><div class="label">Return since pub.</div><div class="val pos">+22.1%</div></div>
+              <div class="cell"><div class="label">发布后回报</div><div class="val pos">+22.1%</div></div>
               <div class="cell"><div class="label">SPY</div><div class="val pos">+8.2%</div></div>
             </div>
           </div>
         </article>
         <article class="article-card">
           <div class="article-body">
-            <div class="article-meta"><span class="ticker">JOYY</span><span>May 23, 2025 · Seeking Alpha</span></div>
-            <div class="article-title"><a href="https://seekingalpha.com/article/4789546-joyy-deep-value-and-amazing-shareholder-returns" target="_blank" rel="noopener">JOYY: Deep Value and Amazing Shareholder Returns</a></div>
-            <div class="article-summary">Summary pulled from article page by the weekly job.</div>
+            <div class="article-meta"><span class="ticker">JOYY</span><span>2025年5月23日 · Seeking Alpha</span></div>
+            <div class="article-title"><a href="https://seekingalpha.com/article/4789546-joyy-deep-value-and-amazing-shareholder-returns" target="_blank" rel="noopener">JOYY：深度价值与卓越股东回报</a></div>
+            <div class="article-summary">摘要由每周任务从文章页面抓取。</div>
             <div class="perf-row">
-              <div class="cell"><div class="label">Return since pub.</div><div class="val pos">+17.9%</div></div>
+              <div class="cell"><div class="label">发布后回报</div><div class="val pos">+17.9%</div></div>
               <div class="cell"><div class="label">SPY</div><div class="val pos">+11.3%</div></div>
             </div>
           </div>
         </article>
         <article class="article-card">
           <div class="article-body">
-            <div class="article-meta"><span class="ticker">CNI</span><span>Jul 24, 2025 · Seeking Alpha</span></div>
-            <div class="article-title"><a href="https://seekingalpha.com/article/4803772-canadian-national-railway-time-to-board-this-train-with-a-cheap-ticket" target="_blank" rel="noopener">Canadian National Railway: Time to Board This Train With a Cheap Ticket</a></div>
-            <div class="article-summary">Summary pulled from article page by the weekly job.</div>
+            <div class="article-meta"><span class="ticker">CNI</span><span>2025年7月24日 · Seeking Alpha</span></div>
+            <div class="article-title"><a href="https://seekingalpha.com/article/4803772-canadian-national-railway-time-to-board-this-train-with-a-cheap-ticket" target="_blank" rel="noopener">加拿大国家铁路：是时候用低价车票上车了</a></div>
+            <div class="article-summary">摘要由每周任务从文章页面抓取。</div>
             <div class="perf-row">
-              <div class="cell"><div class="label">Return since pub.</div><div class="val pos">+14.2%</div></div>
+              <div class="cell"><div class="label">发布后回报</div><div class="val pos">+14.2%</div></div>
               <div class="cell"><div class="label">SPY</div><div class="val pos">+12.8%</div></div>
             </div>
           </div>
         </article>
         <article class="article-card">
           <div class="article-body">
-            <div class="article-meta"><span class="ticker">CROX</span><span>Aug 21, 2025 · Seeking Alpha</span></div>
-            <div class="article-title"><a href="https://seekingalpha.com/article/4815494-crocs-still-an-underrated-cash-cow" target="_blank" rel="noopener">Crocs: Still an Underrated Cash Cow</a></div>
-            <div class="article-summary">Summary pulled from article page by the weekly job.</div>
+            <div class="article-meta"><span class="ticker">CROX</span><span>2025年8月21日 · Seeking Alpha</span></div>
+            <div class="article-title"><a href="https://seekingalpha.com/article/4815494-crocs-still-an-underrated-cash-cow" target="_blank" rel="noopener">Crocs：依然被低估的现金奶牛</a></div>
+            <div class="article-summary">摘要由每周任务从文章页面抓取。</div>
             <div class="perf-row">
-              <div class="cell"><div class="label">Return since pub.</div><div class="val pos">+9.6%</div></div>
+              <div class="cell"><div class="label">发布后回报</div><div class="val pos">+9.6%</div></div>
               <div class="cell"><div class="label">SPY</div><div class="val pos">+10.1%</div></div>
             </div>
           </div>
         </article>
         <article class="article-card">
           <div class="article-body">
-            <div class="article-meta"><span class="ticker">SU</span><span>Dec 3, 2025 · Seeking Alpha</span></div>
-            <div class="article-title"><a href="https://seekingalpha.com/article/4849637-suncor-energy-a-value-machine-with-rising-efficiency" target="_blank" rel="noopener">Suncor Energy: A Value Machine With Rising Efficiency</a></div>
-            <div class="article-summary">Summary pulled from article page by the weekly job.</div>
+            <div class="article-meta"><span class="ticker">SU</span><span>2025年12月3日 · Seeking Alpha</span></div>
+            <div class="article-title"><a href="https://seekingalpha.com/article/4849637-suncor-energy-a-value-machine-with-rising-efficiency" target="_blank" rel="noopener">顺科能源：效率持续提升的价值制造机</a></div>
+            <div class="article-summary">摘要由每周任务从文章页面抓取。</div>
             <div class="perf-row">
-              <div class="cell"><div class="label">Return since pub.</div><div class="val pos">+11.0%</div></div>
+              <div class="cell"><div class="label">发布后回报</div><div class="val pos">+11.0%</div></div>
               <div class="cell"><div class="label">SPY</div><div class="val pos">+6.4%</div></div>
             </div>
+          </div>
+        </article>
+        <article class="article-card">
+          <div class="article-body">
+            <div class="article-meta"><span class="ticker">日本再通胀</span><span>2024年1月25日 · Fidelity</span></div>
+            <div class="article-title"><a href="https://www.fidelity.com.sg/articles/analysis-and-research/2024-01-25-optimism-balloons-from-japans-reflating-economy-1706179610989" target="_blank" rel="noopener">日本再通胀经济带来的乐观情绪</a></div>
+            <div class="article-summary">日本凭借在发达国家中独一无二的再通胀进程，引领全球看多情绪。</div>
+          </div>
+        </article>
+        <article class="article-card">
+          <div class="article-body">
+            <div class="article-meta"><span class="ticker">印度太阳能</span><span>2023年12月21日 · Fidelity</span></div>
+            <div class="article-title"><a href="https://www.fidelity.com.sg/articles/analysis-and-research/2023-12-21-indias-hopes-for-solar-dominance-dimmed-but-not-extinguished-1704188241829" target="_blank" rel="noopener">印度太阳能主导地位的希望：黯淡但未熄灭</a></div>
+            <div class="article-summary">印度提出雄心勃勃的2030年太阳能目标两年后，如期完成装机容量的前景日趋黯淡。</div>
+          </div>
+        </article>
+        <article class="article-card">
+          <div class="article-body">
+            <div class="article-meta"><span class="ticker">韩国折价</span><span>2024年5月16日 · Fidelity</span></div>
+            <div class="article-title"><a href="https://www.fidelity.com.sg/articles/analysis-and-research/2024-05-16-embracing-the-korea-discount-1715922902572" target="_blank" rel="noopener">拥抱韩国折价</a></div>
+            <div class="article-summary">随着公司治理改革和企业价值提升计划推进，韩国长期折价的股市正迎来重新定价的机遇。</div>
           </div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- COURSE MATERIALS -->
+  <!-- 课程材料 -->
   <section id="materials">
     <div class="container">
-      <div class="eyebrow">Course materials</div>
-      <h2 style="max-width: 24ch;">Explainers and charts — get a head start.</h2>
-      <p style="max-width: 60ch; margin-top: 14px; color: var(--ink-muted);">Bite-size primers on the concepts you'll meet across the course, plus a couple of our live charts.</p>
+      <div class="eyebrow">学习资料</div>
+      <h2 style="max-width: 24ch;">可用于预习的课件。</h2>
+      <p style="max-width: 60ch; margin-top: 14px; color: var(--ink-muted);">对课程所涉及的一些重要概念的解析。</p>
 
       <div class="charts-row">
-        <a class="chart-card" href="charts/active-vs-index.html">
-          <div class="material-tag">Live chart</div>
-          <h3>Active funds vs. the index — a 22-year scoreboard</h3>
-          <p>The SPIVA data on US large-cap active funds, 2004–2025. Refreshed yearly.</p>
-          <span class="material-action">View chart →</span>
+        <a class="chart-card" href="../charts/active-vs-index.html">
+          <div class="material-tag">重要图表</div>
+          <h3>主动基金PK指数——专业机构多年成绩单</h3>
+          <p>衡量美国机构平均表现，2004-2025，依据SPIVA数据每年更新。</p>
+          <span class="material-action">查看图表 →</span>
         </a>
         <a class="chart-card" href="#barometer">
-          <div class="material-tag">Live tool</div>
-          <h3>The Sentiment Barometer</h3>
-          <p>Where the market sits in the cycle, scored 0–100. Refreshed weekly.</p>
-          <span class="material-action">View on this page →</span>
+          <div class="material-tag">实时工具</div>
+          <h3>情绪温度计</h3>
+          <p>当前市场在周期中的位置，0–100区间，每周更新。</p>
+          <span class="material-action">在本页查看 →</span>
         </a>
       </div>
 
       <div class="explainer-cluster">
-        <h3 class="explainer-cluster-title">Behavioral biases</h3>
+        <h3 class="explainer-cluster-title">金融心理学</h3>
         <div class="explainer-grid">
-          <a class="explainer-tile" href="explainers/loss-aversion.html">
-            <h4>Loss aversion</h4>
-            <p>Why the pain of losing $100 outweighs the joy of gaining it.</p>
+          <a class="explainer-tile" href="../explainers/loss-aversion.html">
+            <h4>损失厌恶</h4>
+            <p>为什么亏损$100的痛苦远大于赚到$100的喜悦。</p>
           </a>
-          <a class="explainer-tile" href="explainers/confirmation-bias.html">
-            <h4>Confirmation bias</h4>
-            <p>How you stop seeing the data that disagrees with you.</p>
+          <a class="explainer-tile" href="../explainers/confirmation-bias.html">
+            <h4>确认偏见</h4>
+            <p>人为何拒绝接受与自己观点相悖的数据。</p>
           </a>
-          <a class="explainer-tile" href="explainers/herd-mentality.html">
-            <h4>Herd mentality</h4>
-            <p>Why investors stampede in the same direction — and the cost of joining.</p>
+          <a class="explainer-tile" href="../explainers/herd-mentality.html">
+            <h4>羊群效应</h4>
+            <p>为什么投资者常常一窝蜂涌向同一个方向。</p>
           </a>
-          <a class="explainer-tile" href="explainers/endowment-bias.html">
-            <h4>Endowment bias</h4>
-            <p>Why we overvalue what we already own — and won't let it go.</p>
+          <a class="explainer-tile" href="../explainers/endowment-bias.html">
+            <h4>禀赋效应</h4>
+            <p>为什么我们会高估一些自己持有很久的资产价值。</p>
           </a>
         </div>
       </div>
 
       <div class="explainer-cluster">
-        <h3 class="explainer-cluster-title">Investment concepts</h3>
+        <h3 class="explainer-cluster-title">投资概念</h3>
         <div class="explainer-grid">
-          <a class="explainer-tile" href="explainers/roic.html">
-            <h4>ROIC</h4>
-            <p>The single best test of how well a business uses its money.</p>
+          <a class="explainer-tile" href="../explainers/roic.html">
+            <h4>投入资本回报率（ROIC）</h4>
+            <p>衡量企业资金使用效率的重要指标。</p>
           </a>
-          <a class="explainer-tile" href="explainers/free-cash-flow.html">
-            <h4>Free cash flow</h4>
-            <p>The cash a business actually keeps after running and reinvesting.</p>
+          <a class="explainer-tile" href="../explainers/free-cash-flow.html">
+            <h4>自由现金流</h4>
+            <p>企业在运营与再投资后真正留存的现金。</p>
           </a>
-          <a class="explainer-tile" href="explainers/shareholder-returns.html">
-            <h4>Shareholder returns</h4>
-            <p>Dividends plus buybacks — what a business actually pays you to own it.</p>
+          <a class="explainer-tile" href="../explainers/shareholder-returns.html">
+            <h4>股东回报</h4>
+            <p>分红与回购的重要性。</p>
           </a>
-          <a class="explainer-tile" href="explainers/economic-moat.html">
-            <h4>Economic moat</h4>
-            <p>What lets one business earn outsized returns for decades.</p>
+          <a class="explainer-tile" href="../explainers/economic-moat.html">
+            <h4>经济护城河</h4>
+            <p>是什么让一家企业能够长期持续获得超额回报。</p>
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- JOURNEY CONTINUES (closing band before waitlist) -->
+  <!-- 旅程继续 -->
   <section class="journey-band">
     <div class="container journey-wrap">
       <div class="journey-illustration">
-        <img src="images/ai-guide.png" alt="A young woman walks a sun-warmed Mediterranean path with a small friendly bronze robot at her side and a young man companion, the village and sea visible behind them under a golden sky." />
+        <img src="../images/ai-guide.png" alt="一位年轻女性在阳光照耀的地中海小径上行走，身旁跟着一个小巧友善的铜色机器人和一位年轻男伴，村庄与大海在金色天空下展现于身后。" />
       </div>
       <div class="journey-copy">
-        <div class="eyebrow">The road continues</div>
-        <h2>You don't have to walk it alone.</h2>
-        <p>Bring AI along as your guide.</p>
-        <a href="#waitlist" class="btn btn-primary">Join the waitlist</a>
+        <div class="eyebrow">漫长投资旅途</div>
+        <h2>你不必独自前行。</h2>
+        <p>AI可以一路陪伴，担任你的忠实向导。</p>
+        <a href="#waitlist" class="btn btn-primary">我有兴趣</a>
       </div>
     </div>
   </section>
 
-  <!-- WAITLIST -->
+  <!-- 候补名单 -->
   <section id="waitlist" class="alt-bg">
     <div class="container" style="text-align: center;">
-      <div class="eyebrow">Join the waitlist</div>
-      <h2 style="max-width: 22ch; margin: 0 auto;">Be first to hear when course opens.</h2>
+      <div class="eyebrow">提前报名</div>
+      <h2 style="max-width: 22ch; margin: 0 auto;">了解课程最新安排。</h2>
       <div class="waitlist-wrap" style="text-align: left;">
         <form id="waitlist-form" novalidate>
-          <label for="wl-name">Name</label>
-          <input type="text" id="wl-name" name="name" required placeholder="Your name" autocomplete="name" />
-          <label for="wl-email">Email</label>
+          <label for="wl-name">姓名</label>
+          <input type="text" id="wl-name" name="name" required placeholder="你的姓名" autocomplete="name" />
+          <label for="wl-email">电子邮件</label>
           <input type="email" id="wl-email" name="email" required placeholder="you@example.com" autocomplete="email" />
-          <label for="wl-level">Interested in</label>
+          <label for="wl-level">感兴趣的级别</label>
           <select id="wl-level" name="level">
-            <option>Still deciding</option>
-            <option>Level A — Foundations</option>
-            <option>Level B — Going deeper</option>
-            <option>Both levels</option>
+            <option>尚未决定</option>
+            <option>A级 — 基础入门</option>
+            <option>B级 — 进阶选项</option>
+            <option>两个级别都想参加</option>
           </select>
           <input class="waitlist-honey" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
-          <button type="submit">Join the waitlist</button>
+          <button type="submit">提前报名</button>
           <div class="waitlist-status" data-wl-status role="status" aria-live="polite"></div>
         </form>
-        <p class="waitlist-alt">Or just email <a href="mailto:askme@fyfa.ca">askme@fyfa.ca</a>.</p>
+        <p class="waitlist-alt">或直接发送邮件至 <a href="mailto:askme@fyfa.ca">askme@fyfa.ca</a>。</p>
       </div>
     </div>
   </section>
@@ -842,15 +857,13 @@
     <div class="container">
       <div class="footer-inner">
         <div class="wordmark"><span>FYFA<span class="dot">.</span></span></div>
-        <p>© 2026 FYFA · Vancouver, Canada · <a href="mailto:askme@fyfa.ca">askme@fyfa.ca</a></p>
+        <p>© 2026 FYFA <a href="mailto:askme@fyfa.ca">askme@fyfa.ca</a></p>
       </div>
-      <p class="disclaimer">This site is for educational purposes. Nothing here constitutes personal investment advice. The articles referenced reflect the author's views at the time of publication. Past performance does not guarantee future results. Market sentiment indicators are probabilistic signals, not predictions. Always do your own due diligence.</p>
+      <p class="disclaimer">本网站仅供教育用途。本网站任何内容均不构成个人投资建议。所引用文章仅代表作者发表时的观点。过往表现不代表未来结果。市场情绪指标为概率性信号，并非预测。请务必进行独立分析。</p>
     </div>
   </footer>
+
   <script>
-    // When arriving via a cross-page anchor link (e.g. /index.html#materials),
-    // re-scroll to the target after fonts and images settle so layout shift
-    // doesn't leave the reader at the top of the page.
     (function () {
       function scrollToHash() {
         if (!location.hash) return;
@@ -864,17 +877,14 @@
   </script>
 
   <script>
-    // Hydrate the market sentiment barometer from data/barometer.json.
-    // Falls back silently to the static placeholder values if the fetch fails.
     (function () {
       var BAND_LABELS = {
-        fear: 'Fear · cold conditions',
-        leaning_fear: 'Leaning fear · cool',
-        normal: 'Normal · in-range',
-        leaning_greed: 'Leaning greed · normal-hot band',
-        greed: 'Greed · hot conditions'
+        fear: '恐惧 · 寒冷状态',
+        leaning_fear: '偏恐惧 · 偏冷',
+        normal: '正常 · 区间内',
+        leaning_greed: '偏贪婪 · 正常偏热区间',
+        greed: '贪婪 · 过热状态'
       };
-      // Arc circumference for the half-circle of radius 160: pi * r.
       var ARC_LEN = Math.PI * 160;
 
       function fmtRaw(ind) {
@@ -882,7 +892,6 @@
         if (v == null) return '';
         if (ind.value_unit === 'fraction') return ' · ' + (v * 100).toFixed(1) + '%';
         if (ind.value_unit === 'index_0_100') return ' · ' + Math.round(v);
-        // ratio / default — round sensibly by magnitude
         if (Math.abs(v) >= 100) return ' · ' + v.toFixed(0);
         if (Math.abs(v) >= 10)  return ' · ' + v.toFixed(1);
         return ' · ' + v.toFixed(2);
@@ -892,40 +901,31 @@
         if (!s) return '—';
         var d = new Date(s + 'T00:00:00Z');
         if (isNaN(d.getTime())) return s;
-        return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+        return d.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' });
       }
 
       function applyBarometer(data) {
         if (!data || typeof data.score !== 'number') return;
-
-        // Top score + band
         var scoreEl = document.querySelector('[data-bm="score"]');
         var bandEl = document.querySelector('[data-bm="band"]');
         if (scoreEl) scoreEl.textContent = data.score;
         if (bandEl)  bandEl.textContent  = BAND_LABELS[data.band] || data.band;
-
-        // Needle: 0 -> -90deg, 100 -> +90deg around (200, 200)
         var needle = document.getElementById('needle');
         if (needle) {
           var angle = (data.score - 50) * 1.8;
           needle.setAttribute('transform', 'rotate(' + angle.toFixed(1) + ' 200 200)');
         }
-
-        // Arc fill: dashoffset = ARC_LEN * (1 - score/100)
         var arc = document.getElementById('gauge-arc');
         if (arc) {
           arc.setAttribute('stroke-dasharray', ARC_LEN.toFixed(2));
           arc.setAttribute('stroke-dashoffset', (ARC_LEN * (1 - data.score / 100)).toFixed(2));
         }
-
-        // Per-indicator rows
         (data.indicators || []).forEach(function (ind) {
           var row = document.querySelector('[data-bm-key="' + ind.key + '"]');
           if (!row) return;
           var bar = row.querySelector('.bar-fill');
           var val = row.querySelector('.sub-val');
           var raw = row.querySelector('[data-bm-raw]');
-
           if (typeof ind.score === 'number') {
             if (bar) bar.style.width = ind.score + '%';
             if (val) val.textContent = ind.score;
@@ -935,39 +935,30 @@
             if (val) val.textContent = '—';
             row.classList.add('is-stale');
           }
-
           if (raw) raw.textContent = fmtRaw(ind);
-
-          // Google Trends weight line: dynamically reflect "currently X"
           if (ind.key === 'google_trends') {
             var w = row.querySelector('[data-bm-gt-weight]');
             if (w) {
               var current = (typeof ind.score === 'number') ? ind.score : '—';
-              w.textContent = (ind.active ? 'ACTIVE override · ' : 'Active when ≥ 80 · ')
-                            + 'currently ' + current;
+              w.textContent = (ind.active ? '当前已触发 · ' : '≥80 时触发 · ') + '当前值 ' + current;
             }
           }
         });
-
-        // Footer "Last updated"
         var upd = document.querySelector('[data-bm="updated"]');
         if (upd) upd.textContent = fmtAsof(data.asof);
       }
 
-      fetch('data/barometer.json', { cache: 'no-cache' })
+      fetch('../data/barometer.json', { cache: 'no-cache' })
         .then(function (r) { return r.ok ? r.json() : null; })
         .then(function (d) { if (d) applyBarometer(d); })
-        .catch(function () { /* keep placeholders */ });
+        .catch(function () {});
     })();
   </script>
 
   <script>
-    // Waitlist form: POST to /api/waitlist (Cloudflare Pages Function),
-    // replace form with thank-you on success, surface validation errors inline.
     (function () {
       var form = document.getElementById('waitlist-form');
       if (!form) return;
-
       var status = form.querySelector('[data-wl-status]');
       var button = form.querySelector('button[type="submit"]');
       var wrap = form.parentElement;
@@ -981,19 +972,15 @@
       form.addEventListener('submit', async function (e) {
         e.preventDefault();
         setStatus('');
-
-        // Light client-side validation — the function re-validates anyway.
         var name = form.elements['name'].value.trim();
         var email = form.elements['email'].value.trim();
-        if (!name) { setStatus('Please enter your name.'); return; }
+        if (!name) { setStatus('请输入你的姓名。'); return; }
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
-          setStatus('Please enter a valid email address.'); return;
+          setStatus('请输入有效的电子邮件地址。'); return;
         }
-
         button.disabled = true;
         var oldLabel = button.textContent;
-        button.textContent = 'Sending…';
-
+        button.textContent = '提交中…';
         try {
           var res = await fetch('/api/waitlist', {
             method: 'POST',
@@ -1001,20 +988,18 @@
           });
           var data = {};
           try { data = await res.json(); } catch (_) {}
-
           if (res.ok && data.ok) {
             wrap.innerHTML =
               '<div class="waitlist-success">' +
-                '<h3>Thanks — you’re on the list.</h3>' +
-                '<p>I’ll be in touch closer to the May 2026 launch. ' +
-                'In the meantime, feel free to email ' +
-                '<a href="mailto:askme@fyfa.ca">askme@fyfa.ca</a> with any questions.</p>' +
+                '<h3>已收到。</h3>' +
+                '<p>课程于2026年6月开启前，我们会与你联系。如有任何疑问，欢迎随时发送邮件至 ' +
+                '<a href="mailto:askme@fyfa.ca">askme@fyfa.ca</a>。</p>' +
               '</div>';
             return;
           }
-          setStatus(data.error || 'Something went wrong. Please try again or email askme@fyfa.ca.');
+          setStatus(data.error || '出现错误，请重试或发送邮件至 askme@fyfa.ca。');
         } catch (err) {
-          setStatus('Network error. Please try again or email askme@fyfa.ca.');
+          setStatus('网络错误，请重试或发送邮件至 askme@fyfa.ca。');
         } finally {
           button.disabled = false;
           button.textContent = oldLabel;
@@ -1024,8 +1009,6 @@
   </script>
 
   <script>
-    // Hydrate the published-articles grid from data/articles.json.
-    // Falls back silently to the static cards if the fetch fails.
     (function () {
       var grid = document.getElementById('articles-grid');
       if (!grid) return;
@@ -1039,8 +1022,7 @@
 
       function fmtPct(n) {
         if (typeof n !== 'number') return '—';
-        var s = (n >= 0 ? '+' : '') + n.toFixed(1) + '%';
-        return s;
+        return (n >= 0 ? '+' : '') + n.toFixed(1) + '%';
       }
 
       function fmtPts(n) {
@@ -1054,20 +1036,19 @@
         if (!iso) return '';
         var d = new Date(iso + 'T00:00:00Z');
         if (isNaN(d.getTime())) return iso;
-        return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+        return d.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' });
       }
 
       function cardHTML(a) {
         var metaPill = a.ticker ? a.ticker : (a.label || '');
         var metaRight = (a.pub_date_pretty || fmtDate(a.pub_date)) +
                         (a.platform_label ? ' · ' + escapeHTML(a.platform_label) : '');
-
         var perf = '';
         if (typeof a.return_pct === 'number' && typeof a.spy_return_pct === 'number') {
           perf =
             '<div class="perf-row">' +
               '<div class="cell">' +
-                '<div class="label">Return since pub.</div>' +
+                '<div class="label">发布后回报</div>' +
                 '<div class="val ' + classFor(a.return_pct) + '">' + fmtPct(a.return_pct) + '</div>' +
               '</div>' +
               '<div class="cell">' +
@@ -1076,11 +1057,9 @@
               '</div>' +
             '</div>';
         }
-
         var platformClass = a.platform === 'seekingalpha' ? 'is-sa'
                           : a.platform === 'fidelity'    ? 'is-fid'
                           : '';
-
         return (
           '<article class="article-card ' + platformClass + '">' +
             '<div class="article-body">' +
@@ -1102,11 +1081,7 @@
 
       function applyArticles(payload) {
         if (!payload || !Array.isArray(payload.articles) || payload.articles.length === 0) return;
-
-        // Render grid
         grid.innerHTML = payload.articles.map(cardHTML).join('');
-
-        // Rollup stats — show only if we have any tickered articles
         var s = payload.summary || {};
         if (s.n_with_returns && s.avg_return_pct != null) {
           var rollup = document.querySelector('.rollup');
@@ -1116,30 +1091,18 @@
             var as = document.getElementById('avg-spy');
             var aa = document.getElementById('avg-alpha');
             var lu = document.getElementById('last-updated');
-            if (ar) {
-              ar.textContent = fmtPct(s.avg_return_pct);
-              ar.classList.toggle('neg', s.avg_return_pct < 0);
-              ar.classList.toggle('pos', s.avg_return_pct >= 0);
-            }
-            if (as) {
-              as.textContent = fmtPct(s.avg_spy_pct);
-              as.classList.toggle('neg', s.avg_spy_pct < 0);
-              as.classList.toggle('pos', s.avg_spy_pct >= 0);
-            }
-            if (aa) {
-              aa.textContent = fmtPts(s.avg_alpha_pct);
-              aa.classList.toggle('neg', s.avg_alpha_pct < 0);
-              aa.classList.toggle('pos', s.avg_alpha_pct >= 0);
-            }
+            if (ar) { ar.textContent = fmtPct(s.avg_return_pct); ar.classList.toggle('neg', s.avg_return_pct < 0); ar.classList.toggle('pos', s.avg_return_pct >= 0); }
+            if (as) { as.textContent = fmtPct(s.avg_spy_pct); as.classList.toggle('neg', s.avg_spy_pct < 0); as.classList.toggle('pos', s.avg_spy_pct >= 0); }
+            if (aa) { aa.textContent = fmtPts(s.avg_alpha_pct); aa.classList.toggle('neg', s.avg_alpha_pct < 0); aa.classList.toggle('pos', s.avg_alpha_pct >= 0); }
             if (lu) lu.textContent = fmtDate(payload.asof);
           }
         }
       }
 
-      fetch('data/articles.json', { cache: 'no-cache' })
+      fetch('../data/articles.json', { cache: 'no-cache' })
         .then(function (r) { return r.ok ? r.json() : null; })
         .then(function (d) { if (d) applyArticles(d); })
-        .catch(function () { /* keep static cards */ });
+        .catch(function () {});
     })();
   </script>
 </body>
