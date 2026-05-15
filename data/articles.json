@@ -114,39 +114,6 @@
       "latest_close": 65.12,
       "pub_close_date": "2025-12-03",
       "latest_close_date": "2026-05-11"
-    },
-    {
-      "url": "https://www.fidelity.com.sg/articles/analysis-and-research/2024-01-25-optimism-balloons-from-japans-reflating-economy-1706179610989",
-      "title": "Optimism balloons from Japan's reflating economy",
-      "ticker": null,
-      "label": "Japan Reflation",
-      "pub_date": "2024-01-25",
-      "pub_date_pretty": "Jan 25, 2024",
-      "platform": "fidelity",
-      "platform_label": "Fidelity",
-      "summary": "Japan leads the world on bullish sentiment as its economy enters a reflating stage unique among developed nations."
-    },
-    {
-      "url": "https://www.fidelity.com.sg/articles/analysis-and-research/2023-12-21-indias-hopes-for-solar-dominance-dimmed-but-not-extinguished-1704188241829",
-      "title": "India's hopes for solar dominance dimmed but not extinguished",
-      "ticker": null,
-      "label": "India Solar",
-      "pub_date": "2023-12-21",
-      "pub_date_pretty": "Dec 21, 2023",
-      "platform": "fidelity",
-      "platform_label": "Fidelity",
-      "summary": "Two years after India revealed its ambitious 2030 solar power targets, the country's prospects for installing enough capacity on time are darkening."
-    },
-    {
-      "url": "https://www.fidelity.com.sg/articles/analysis-and-research/2024-05-16-embracing-the-korea-discount-1715922902572",
-      "title": "Embracing the Korea discount",
-      "ticker": null,
-      "label": "Korea Discount",
-      "pub_date": "2024-05-16",
-      "pub_date_pretty": "May 16, 2024",
-      "platform": "fidelity",
-      "platform_label": "Fidelity",
-      "summary": "Korea's chronically discounted equities are positioned for re-rating as governance reforms and corporate value-up programs take hold."
     }
   ]
 }
