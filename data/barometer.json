@@ -1,17 +1,17 @@
 {
-  "asof": "2026-07-27",
-  "score": 88,
+  "asof": "2026-08-03",
+  "score": 89,
   "band": "greed",
   "indicators": [
     {
       "key": "shiller_pe",
       "name": "Shiller PE",
       "weight": 0.25,
-      "value": 40.46,
+      "value": 40.91,
       "value_unit": "ratio",
       "score": 100,
-      "zscore": 2.14,
-      "asof": "2026-07-24",
+      "zscore": 2.22,
+      "asof": "2026-07-31",
       "source": "Robert Shiller / multpl.com",
       "source_url": "https://www.multpl.com/shiller-pe/table/by-month",
       "stale": false
@@ -20,11 +20,11 @@
       "key": "buffett",
       "name": "Buffett indicator",
       "weight": 0.25,
-      "value": 230.1513,
+      "value": 231.1244,
       "value_unit": "ratio",
       "score": 100,
-      "zscore": 2.47,
-      "asof": "2026-07-01",
+      "zscore": 2.46,
+      "asof": "2026-08-01",
       "source": "yfinance ^DWCF / FRED GDP",
       "source_url": "https://finance.yahoo.com/quote/%5EDWCF",
       "stale": false
@@ -59,10 +59,10 @@
       "key": "fear_greed",
       "name": "CNN Fear & Greed Index",
       "weight": 0.1,
-      "value": 39.4,
+      "value": 44.6,
       "value_unit": "index_0_100",
-      "score": 39,
-      "asof": "2026-07-27",
+      "score": 45,
+      "asof": "2026-08-03",
       "source": "CNN Business Fear & Greed Index",
       "source_url": "https://www.cnn.com/markets/fear-and-greed",
       "rating": "fear",
@@ -81,7 +81,7 @@
       "source": null,
       "source_url": null,
       "stale": true,
-      "error": "pytrends fetch failed: HTTPSConnectionPool(host='trends.google.com', port=443): Max retries exceeded with url: /trends/api/widgetdata/multiline?req=%7B%22time%22%3A+%222025-07-27+2026-07-27%22%2C+%22resolution%22%3A+%22WEEK%22%2C+%22locale%22%3A+%22en-US%22%2C+%22comparisonItem%22%3A+%5B%7B%22geo%22%3A+%7B%22country%22%3A+%22US%22%7D%2C+%22complexKeywordsRestriction%22%3A+%7B%22keyword%22%3A+%5B%7B%22type%22%3A+%22BROAD%22%2C+%22value%22%3A+%22stock+market%22%7D%5D%7D%7D%5D%2C+%22requestOptions%22%3A+%7B%22property%22%3A+%22%22%2C+%22backend%22%3A+%22IZG%22%2C+%22category%22%3A+0%7D%2C+%22userConfig%22%3A+%7B%22userType%22%3A+%22USER_TYPE_SCRAPER%22%7D%7D&token=AMbBvsEAAAAAamjTnaole65mruKkRR5r-4mlu-CWXdT3&tz=360 (Caused by ResponseError('too many 429 error responses'))"
+      "error": "pytrends fetch failed: HTTPSConnectionPool(host='trends.google.com', port=443): Max retries exceeded with url: /trends/api/widgetdata/multiline?req=%7B%22time%22%3A+%222025-08-03+2026-08-03%22%2C+%22resolution%22%3A+%22WEEK%22%2C+%22locale%22%3A+%22en-US%22%2C+%22comparisonItem%22%3A+%5B%7B%22geo%22%3A+%7B%22country%22%3A+%22US%22%7D%2C+%22complexKeywordsRestriction%22%3A+%7B%22keyword%22%3A+%5B%7B%22type%22%3A+%22BROAD%22%2C+%22value%22%3A+%22stock+market%22%7D%5D%7D%7D%5D%2C+%22requestOptions%22%3A+%7B%22property%22%3A+%22%22%2C+%22backend%22%3A+%22IZG%22%2C+%22category%22%3A+0%7D%2C+%22userConfig%22%3A+%7B%22userType%22%3A+%22USER_TYPE_SCRAPER%22%7D%7D&token=AMbBvsEAAAAAanIPXDZMHvNJLSAfrl7919xR4mC4rdx8&tz=360 (Caused by ResponseError('too many 429 error responses'))"
     }
   ],
   "weights": {
