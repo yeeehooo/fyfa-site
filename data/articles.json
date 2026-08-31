@@ -1,10 +1,10 @@
 {
-  "asof": "2026-08-24",
+  "asof": "2026-08-31",
   "summary": {
     "n_with_returns": 5,
-    "avg_return_pct": 43.8,
-    "avg_spy_pct": 25.9,
-    "avg_alpha_pct": 17.9
+    "avg_return_pct": 42.6,
+    "avg_spy_pct": 26.6,
+    "avg_alpha_pct": 16.0
   },
   "articles": [
     {
@@ -28,13 +28,13 @@
       "platform": "seekingalpha",
       "platform_label": "Seeking Alpha",
       "summary": "",
-      "return_pct": -4.9,
-      "spy_return_pct": 40.5,
-      "alpha_pct": -45.4,
+      "return_pct": -3.6,
+      "spy_return_pct": 41.3,
+      "alpha_pct": -44.8,
       "pub_close": 9.23,
-      "latest_close": 8.78,
+      "latest_close": 8.9,
       "pub_close_date": "2025-04-25",
-      "latest_close_date": "2026-08-24"
+      "latest_close_date": "2026-08-31"
     },
     {
       "url": "https://seekingalpha.com/article/4789546-joyy-deep-value-and-amazing-shareholder-returns",
@@ -46,13 +46,13 @@
       "platform": "seekingalpha",
       "platform_label": "Seeking Alpha",
       "summary": "",
-      "return_pct": 85.1,
-      "spy_return_pct": 33.6,
-      "alpha_pct": 51.5,
+      "return_pct": 88.1,
+      "spy_return_pct": 34.3,
+      "alpha_pct": 53.8,
       "pub_close": 39.6771,
-      "latest_close": 73.44,
+      "latest_close": 74.64,
       "pub_close_date": "2025-05-23",
-      "latest_close_date": "2026-08-24"
+      "latest_close_date": "2026-08-31"
     },
     {
       "url": "https://seekingalpha.com/article/4803772-canadian-national-railway-time-to-board-this-train-with-a-cheap-ticket",
@@ -64,13 +64,13 @@
       "platform": "seekingalpha",
       "platform_label": "Seeking Alpha",
       "summary": "",
-      "return_pct": 36.2,
-      "spy_return_pct": 21.6,
-      "alpha_pct": 14.6,
+      "return_pct": 33.2,
+      "spy_return_pct": 22.2,
+      "alpha_pct": 10.9,
       "pub_close": 93.6823,
-      "latest_close": 127.61,
+      "latest_close": 124.75,
       "pub_close_date": "2025-07-24",
-      "latest_close_date": "2026-08-24"
+      "latest_close_date": "2026-08-31"
     },
     {
       "url": "https://seekingalpha.com/article/4815494-crocs-still-an-underrated-cash-cow",
@@ -82,13 +82,13 @@
       "platform": "seekingalpha",
       "platform_label": "Seeking Alpha",
       "summary": "",
-      "return_pct": 49.5,
-      "spy_return_pct": 21.4,
-      "alpha_pct": 28.2,
+      "return_pct": 43.6,
+      "spy_return_pct": 22.0,
+      "alpha_pct": 21.6,
       "pub_close": 83.81,
-      "latest_close": 125.33,
+      "latest_close": 120.38,
       "pub_close_date": "2025-08-21",
-      "latest_close_date": "2026-08-24"
+      "latest_close_date": "2026-08-31"
     },
     {
       "url": "https://seekingalpha.com/article/4849637-suncor-energy-a-value-machine-with-rising-efficiency",
@@ -100,13 +100,13 @@
       "platform": "seekingalpha",
       "platform_label": "Seeking Alpha",
       "summary": "",
-      "return_pct": 53.2,
-      "spy_return_pct": 12.5,
-      "alpha_pct": 40.7,
+      "return_pct": 51.8,
+      "spy_return_pct": 13.1,
+      "alpha_pct": 38.7,
       "pub_close": 44.0445,
-      "latest_close": 67.48,
+      "latest_close": 66.84,
       "pub_close_date": "2025-12-03",
-      "latest_close_date": "2026-08-24"
+      "latest_close_date": "2026-08-31"
     }
   ]
 }
